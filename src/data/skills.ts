@@ -1,9 +1,7 @@
 import {
-    SiAdobephotoshop, SiAstro,
+    SiAstro,
     SiAuth0,
-    SiBabel,
     SiBootstrap,
-    SiChakraui,
     SiCss3,
     SiDart,
     SiDocker,
@@ -17,11 +15,8 @@ import {
     SiGitlab,
     SiHtml5,
     SiJavascript,
-    SiJira,
     SiJupyter,
     SiKotlin,
-    SiKubernetes,
-    SiMui,
     SiNextdotjs,
     SiNextui,
     SiNodedotjs,
@@ -32,21 +27,13 @@ import {
     SiPostgresql,
     SiPython,
     SiReact,
-    SiRedux,
-    SiSass,
     SiShadcnui,
-    SiSketch,
     SiSupabase,
-    SiSymfony,
     SiTailwindcss,
-    SiTrello,
     SiTypescript,
-    SiWebpack,
-    SiWordpress
 } from "react-icons/si";
 import {GiPolarBear} from "react-icons/gi";
 import {TbApi, TbSql} from "react-icons/tb";
-import {LiaOpencart} from "react-icons/lia";
 
 type Skill = {
     label: string;
@@ -82,18 +69,6 @@ const skills: Skill[] = [
 
 export default skills;
 
-export const techStack = [
-    {tech: 'Programming Languages:', skills: ["Java", "Kotlin", "Dart", "Python", "Javascript", "Typescript"]},
-    {tech: 'Frontend Frameworks and Libraries:', skills: ["NextJs", "React"]},
-    {tech: 'UI Libraries and Frameworks:', skills: ['Flutter', 'Provider', 'GetX']},
-    {tech: 'CSS Frameworks:', skills: ['React', 'Redux', 'Material-UI']},
-    {tech: 'Backend Frameworks:', skills: ['React', 'Redux', 'Material-UI']},
-    {tech: 'Databases and BaaS:', skills: ['Django', 'Flask']},
-    {tech: 'Authentication:', skills: ['MySQL', 'PostgreSQL', 'SQLite']},
-    {tech: 'Development and DevOps Tools:\n', skills: ['Mongoose']},
-    {tech: 'CMS:', skills: ['Firestore', 'Authentication', 'Storage']},
-    {tech: 'VDesign Tools:', skills: ['Git', 'GitHub', 'Bitbucket']},
-]
 
 export const techStackCategiries = {
     'Programming Languages:': ['Java', 'Kotlin', 'Dart', 'Python', 'JavaScript', 'TypeScript'],
@@ -122,50 +97,36 @@ export const techStackCategiries = {
         'Docker',
     ],
     'CMS:': [],
-    'Design Tools:': ['Figma',],
+    'Tools:': ['Figma','Facebook'],
     'Project Management:': ['Notion', 'Obsidian'],
 }
 export const techStackIcons = [
     {label: 'HTML', icon: SiHtml5},
     {label: 'CSS', icon: SiCss3},
-    {label: 'SASS', icon: SiSass},
     {label: 'Bootstrap', icon: SiBootstrap},
     {label: 'Tailwind CSS', icon: SiTailwindcss},
     {label: 'JavaScript', icon: SiJavascript},
     {label: 'TypeScript', icon: SiTypescript},
     {label: 'React', icon: SiReact},
-    {label: 'Redux', icon: SiRedux},
     {label: 'Zustand', icon: GiPolarBear},
     {label: 'Next.js', icon: SiNextdotjs},
     {label: 'Next UI', icon: SiNextui},
-    {label: 'Chakra UI', icon: SiChakraui},
-    {label: 'Material UI', icon: SiMui},
     {label: 'Shadcn-UI', icon: SiShadcnui},
     {label: 'Framer Motion', icon: SiFramer},
     {label: 'Git', icon: SiGit},
     {label: 'GitHub', icon: SiGithub},
     {label: 'GitLab', icon: SiGitlab},
     {label: 'npm', icon: SiNpm},
-    {label: 'Babel', icon: SiBabel},
-    {label: 'Webpack', icon: SiWebpack},
     {label: 'Docker', icon: SiDocker},
-    {label: 'Kubernetes', icon: SiKubernetes},
     {label: 'Node.js', icon: SiNodedotjs},
     {label: 'API', icon: TbApi},
     {label: 'Firebase', icon: SiFirebase},
     {label: 'Supabase', icon: SiSupabase},
     {label: 'Next-Auth', icon: SiAuth0},
     {label: 'PHP', icon: SiPhp},
-    {label: 'Symfony', icon: SiSymfony},
     {label: 'MySQL', icon: TbSql},
     {label: 'PostgreSQL', icon: SiPostgresql},
-    {label: 'WordPress', icon: SiWordpress},
-    {label: 'Opencart', icon: LiaOpencart},
     {label: 'Figma', icon: SiFigma},
-    {label: 'Sketch', icon: SiSketch},
-    {label: 'Adobe Photoshop', icon: SiAdobephotoshop},
-    {label: 'Jira', icon: SiJira},
-    {label: 'Trello', icon: SiTrello},
     {label: 'Notion', icon: SiNotion},
     {label: 'Obsidian', icon: SiObsidian},
     {label: 'FastAPI', icon: SiFastapi},

@@ -22,7 +22,7 @@ export const Skills = () => (
                     </h3>
                     <ul className="flex gap-2 flex-wrap">
                         {techStackIcons
-                            .filter((item) => categoryItems.includes(item.label))
+                            .filter((item:any) => categoryItems.includes(item.label))
                             .map((item, index) => (
                                 <Tooltip
                                     key={index}
