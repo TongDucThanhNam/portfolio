@@ -1,46 +1,54 @@
 type Project = {
-    label: string;
-    url?: string;
-    repoUrl: string;
-    description: string;
-    stars: number;
-    highlight: boolean;
-    tags: string[];
+  label: string;
+  url?: string;
+  repoUrl: string;
+  description: string;
+  stars: number;
+  highlight: boolean;
+  tags: string[];
 };
 
 const projects: Project[] = [
-    {
-        label: 'Cửa hàng Rèm Việt',
-        repoUrl: "https://luoichongmuoi.shop",
-        description: "Một trang web bán hàng về rèm cửa sổ lưới chống muỗi",
-        stars: 1,
-        highlight: true,
-        tags: ['Astro', 'React', 'MongoDB', "ExpressJS"],
-    },
-    {
-        label: 'Seller keyboard',
-        repoUrl: 'https://github.com/tongducthanhnam/SellerKeyboard',
-        description: "A keyboard custom for seller",
-        stars: 1,
-        highlight: true,
-        tags: ['Kotlin', 'Jetpack compose', 'SQLite'],
-    },
-    {
-        label: 'Building Material Retail',
-        repoUrl: 'https://github.com/TongDucThanhNam/building_material_retail',
-        description: "A Application for building material retail store",
-        stars: 1,
-        highlight: true,
-        tags: ['Flutter', 'Firebase'],
-    },
-    {
-        label: 'E-commerce',
-        repoUrl: 'https://github.com/TongDucThanhNam/E-Commerce',
-        description: "An E-commerce application",
-        stars: 1,
-        highlight: true,
-        tags: ['NodeJs', 'NextJs', "ReactJS"],
-    },
+  {
+    label: "AI Chat App",
+    description: "A ChatGPT app clone",
+    stars: 1,
+    highlight: true,
+    tags: ["NextJs", "TypeScript", "TailwindCSS", "Vercel AI SDK"],
+    repoUrl: "https://github.com/TongDucThanhNam/ai-chat-app",
+  },
+  {
+    label: "Rèm Việt Ecommerce",
+    repoUrl: "https://luoichongmuoi.shop",
+    description: "An Ecommerce website for Rèm Việt store",
+    stars: 1,
+    highlight: true,
+    tags: ["Astro", "React", "MongoDB", "ExpressJS"],
+  },
+  {
+    label: "Seller keyboard",
+    repoUrl: "https://github.com/tongducthanhnam/SellerKeyboard",
+    description: "A keyboard custom for seller",
+    stars: 1,
+    highlight: true,
+    tags: ["Kotlin", "Jetpack compose", "SQLite"],
+  },
+  {
+    label: "Building Material Retail",
+    repoUrl: "https://github.com/TongDucThanhNam/building_material_retail",
+    description: "A Application for building material retail store",
+    stars: 1,
+    highlight: true,
+    tags: ["Flutter", "Firebase"],
+  },
+  {
+    label: "E-commerce",
+    repoUrl: "https://github.com/TongDucThanhNam/E-Commerce",
+    description: "An E-commerce application",
+    stars: 1,
+    highlight: true,
+    tags: ["NodeJs", "NextJs", "ReactJS"],
+  },
 ];
 
 export default projects;
