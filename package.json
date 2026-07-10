@@ -1,70 +1,46 @@
 {
-  "name": "astro-portfolio",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro start",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "lint": "eslint --fix src"
-  },
-  "author": {
-    "name": "Tong Duc Thanh Nam",
-    "email": "tongducthanhnam@gmail.com"
-  },
-  "keywords": [
-    "astro",
-    "react",
-    "nextui",
-    "tailwindcss",
-    "portfolio"
-  ],
-  "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/db": "^0.14.8",
-    "@astrojs/react": "^4.2.1",
-    "@astrojs/tailwind": "^6.0.0",
-    "@fontsource-variable/archivo": "^5.0.20",
-    "@fontsource-variable/fira-code": "^5.0.19",
-    "@fortawesome/fontawesome-svg-core": "^6.6.0",
-    "@fortawesome/free-brands-svg-icons": "^6.6.0",
-    "@fortawesome/free-regular-svg-icons": "^6.6.0",
-    "@fortawesome/free-solid-svg-icons": "^6.6.0",
-    "@fortawesome/react-fontawesome": "^0.2.2",
-    "@nanostores/persistent": "^0.10.2",
-    "@nanostores/react": "^0.7.3",
-    "@nextui-org/react": "^2.4.6",
-    "@react-three/drei": "^9.115.0",
-    "@react-three/fiber": "^8.17.10",
-    "@react-three/rapier": "^1.5.0",
-    "@tabler/icons-react": "^3.21.0",
-    "@tsparticles/engine": "^3.5.0",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.5.0",
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
-    "astro": "^5.4.2",
-    "astro-seo": "^0.8.4",
-    "framer-motion": "^11.3.31",
-    "mini-svg-data-uri": "^1.4.4",
-    "nanostores": "^0.11.3",
-    "node-emoji": "^2.1.3",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.3.0",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.4",
-    "wrangler": "^3.84.1"
-  },
-  "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@typescript-eslint/eslint-plugin": "^8.3.0",
-    "astro-eslint-parser": "^0.17.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-astro": "^0.34.0",
-    "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1"
-  }
+	"name": "tanstack-start-portfolio",
+	"private": true,
+	"type": "module",
+	"version": "0.0.1",
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"scripts": {
+		"dev": "turbo run dev",
+		"dev:web": "turbo run dev -F web",
+		"build": "turbo run build",
+		"preview": "turbo run preview -F web",
+		"start": "npm run preview --workspace web",
+		"typecheck": "turbo run typecheck",
+		"check-types": "turbo run check-types",
+		"lint": "turbo run lint",
+		"db:generate": "turbo run db:generate -F @tanstack-start-portfolio/db",
+		"deploy": "turbo run deploy -F @tanstack-start-portfolio/infra",
+		"destroy": "turbo run destroy -F @tanstack-start-portfolio/infra",
+		"check": "biome check --write ."
+	},
+	"author": {
+		"name": "Tong Duc Thanh Nam",
+		"email": "tongducthanhnam@gmail.com"
+	},
+	"keywords": [
+		"tanstack-start",
+		"cloudflare",
+		"alchemy",
+		"d1",
+		"react",
+		"tailwindcss",
+		"portfolio"
+	],
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.16",
+		"@cloudflare/workers-types": "^4.20260621.1",
+		"@types/node": "^22.13.14",
+		"drizzle-orm": "^0.45.2",
+		"turbo": "2.9.16",
+		"typescript": "^6.0.3"
+	},
+	"packageManager": "npm@11.16.0"
 }

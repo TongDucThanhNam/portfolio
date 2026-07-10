@@ -1,0 +1,25 @@
+{
+  "name": "@tanstack-start-portfolio/env",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./server": "./src/server.ts",
+    "./web": "./src/web.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@t3-oss/env-core": "^0.13.1",
+    "dotenv": "^17.2.2",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@tanstack-start-portfolio/config": "*",
+    "@tanstack-start-portfolio/infra": "*",
+    "@types/node": "^22.13.14",
+    "typescript": "^6.0.3"
+  }
+}

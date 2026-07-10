@@ -1,0 +1,30 @@
+// Better-T-Stack
+//
+// Website: https://www.better-t-stack.dev/
+// Stack Builder: https://www.better-t-stack.dev/new
+// Add new addons with: npx create-better-t-stack add
+// This file records the intended stack shape for agents and humans.
+
+{
+  "$schema": "https://r2.better-t-stack.dev/schema.json",
+  "version": "3.35.0",
+  "createdAt": "2026-06-30T00:00:00.000Z",
+  "reproducibleCommand": "npx create-better-t-stack@latest tanstack-start-portfolio --frontend tanstack-start --backend self --runtime none --database sqlite --orm drizzle --api none --auth none --payments none --addons turborepo biome --examples none --db-setup d1 --manual-db --web-deploy cloudflare --server-deploy none --no-git --package-manager npm --no-install",
+  "dbSetupOptions": {
+    "mode": "manual"
+  },
+  "database": "sqlite",
+  "orm": "drizzle",
+  "backend": "self",
+  "runtime": "none",
+  "frontend": ["tanstack-start"],
+  "addons": ["turborepo", "biome"],
+  "examples": [],
+  "auth": "none",
+  "payments": "none",
+  "packageManager": "npm",
+  "dbSetup": "d1",
+  "api": "none",
+  "webDeploy": "cloudflare",
+  "serverDeploy": "none"
+}

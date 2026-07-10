@@ -1,0 +1,3 @@
+{
+  "extends": "@tanstack-start-portfolio/config/tsconfig.base.json"
+}

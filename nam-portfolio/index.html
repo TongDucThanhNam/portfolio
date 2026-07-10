@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tong Duc Thanh Nam — Full-stack TypeScript / AI Application Engineer</title>
+    <meta name="description" content="Tong Duc Thanh Nam — Full-stack TypeScript Engineer & AI Application Engineer. Building Eragear, AI chat UIs, and a desktop coding copilot. Ho Chi Minh City, Vietnam.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Manrope:wght@200;300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis smooth scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.18/dist/lenis.css">
+    <script src="https://unpkg.com/lenis@1.3.18/dist/lenis.min.js"></script>
+
+    <style>
+        html, body { overflow-x: hidden; }
+        body { font-family: 'Manrope', system-ui, sans-serif; background: #EFEAE0; }
+        @media (pointer: fine) { * { cursor: none !important; } }
+        .font-serif { font-family: "Fraunces", Georgia, serif; }
+        .font-sans  { font-family: "Manrope", system-ui, sans-serif; }
+        .font-mono  { font-family: "Space Mono", ui-monospace, monospace; }
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-stopped { overflow: hidden; }
+        ::-webkit-scrollbar { width: 0; background: transparent; }
+    </style>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-bone text-ink antialiased">
+
+    <!-- =================== GLOBAL UI LAYERS =================== -->
+
+    <!-- Soft paper grain -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Custom cursor — minimal dot + ring -->
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-label" id="cursor-label" aria-hidden="true"></div>
+
+    <!-- Preloader — one prompt, one match, one result -->
+    <div id="preloader" aria-hidden="true">
+        <div class="pre-inner">
+            <div class="pre-head font-mono">
+                <span>AI talent search</span>
+                <span>product evidence</span>
+            </div>
+
+            <div class="pre-stage">
+                <p class="pre-prompt font-serif"><span class="pre-caret">›</span> Find the engineer who ships AI products.</p>
+                <div class="pre-search">
+                    <span class="font-mono">matching</span>
+                    <span class="pre-search-line"><span class="pre-search-fill"></span></span>
+                    <span class="font-mono" id="pre-score">00%</span>
+                </div>
+            </div>
+
+            <div class="pre-result">
+                <p class="pre-result-eyebrow font-mono">Best match</p>
+                <h2 class="font-serif">Thanh <em>Nam</em></h2>
+                <p class="pre-result-sub font-sans">Full-stack TypeScript · AI application engineer</p>
+                <span class="pre-result-stamp font-mono">return profile ↗</span>
+            </div>
+
+            <div class="pre-foot font-mono">
+                <span>Ho Chi Minh City</span>
+                <span>engineer · HCMC</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top scroll progress -->
+    <div id="scroll-progress" aria-hidden="true">
+        <span class="scroll-progress-fill" id="scroll-progress-fill"></span>
+    </div>
+
+    <!-- Section navigator (right side rail) -->
+    <nav class="section-rail" aria-label="Chapter navigation">
+        <div class="section-rail-axis" aria-hidden="true"></div>
+        <ul>
+            <li><a href="#hero" data-section-link="hero" class="is-active"><span class="rail-num">00</span><span class="rail-name">Intro</span><span class="rail-tick"></span></a></li>
+            <li><a href="#why" data-section-link="why"><span class="rail-num">01</span><span class="rail-name">Why</span><span class="rail-tick"></span></a></li>
+            <li><a href="#about" data-section-link="about"><span class="rail-num">02</span><span class="rail-name">About</span><span class="rail-tick"></span></a></li>
+            <li><a href="#experience" data-section-link="experience"><span class="rail-num">03</span><span class="rail-name">Exp</span><span class="rail-tick"></span></a></li>
+            <li><a href="#skills" data-section-link="skills"><span class="rail-num">04</span><span class="rail-name">Skills</span><span class="rail-tick"></span></a></li>
+            <li><a href="#projects" data-section-link="projects"><span class="rail-num">05</span><span class="rail-name">Work</span><span class="rail-tick"></span></a></li>
+            <li><a href="#contact" data-section-link="contact"><span class="rail-num">06</span><span class="rail-name">Contact</span><span class="rail-tick"></span></a></li>
+        </ul>
+    </nav>
+
+    <!-- =================== NAV BAR =================== -->
+    <header class="nav-bar" id="nav-bar">
+        <a href="#hero" class="nav-brand" data-cursor-label="TOP">
+            <span class="nav-brand-text font-serif">Thanh<span class="text-rebar"> ·</span> Nam</span>
+        </a>
+        <nav class="nav-links font-mono" aria-label="Main menu">
+            <a href="#why" data-cursor-label="WHY">Why</a>
+            <a href="#about" data-cursor-label="ABOUT">About</a>
+            <a href="#experience" data-cursor-label="EXP">Experience</a>
+            <a href="#projects" data-cursor-label="WORK">Work</a>
+            <a href="#contact" data-cursor-label="CONTACT">Contact</a>
+        </nav>
+        <a href="#contact" class="nav-cta font-mono" data-cursor-label="HIRE">
+            <span>Available</span>
+            <span class="nav-cta-dot" aria-hidden="true"></span>
+        </a>
+        <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span>
+        </button>
+    </header>
+
+    <!-- Mobile / overlay menu -->
+    <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+        <div class="menu-inner">
+            <p class="font-mono menu-label">CHAPTERS</p>
+            <ul>
+                <li><a href="#why" class="font-serif"><span class="font-mono">01</span> Why</a></li>
+                <li><a href="#about" class="font-serif"><span class="font-mono">02</span> About</a></li>
+                <li><a href="#experience" class="font-serif"><span class="font-mono">03</span> Experience</a></li>
+                <li><a href="#skills" class="font-serif"><span class="font-mono">04</span> Skills</a></li>
+                <li><a href="#projects" class="font-serif"><span class="font-mono">05</span> Work</a></li>
+                <li><a href="#contact" class="font-serif"><span class="font-mono">06</span> Contact</a></li>
+            </ul>
+            <div class="menu-foot font-mono">
+                <span>HO CHI MINH CITY · VN</span>
+                <span>UTC +7</span>
+            </div>
+        </div>
+    </div>
+
+<main id="main">
+
+    <!-- =================== 00 · HERO =================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" aria-hidden="true">
+            <div class="hero-disc" data-depth="0.18"></div>
+            <div class="hero-ghost font-serif italic" data-depth="0.08">eragear</div>
+        </div>
+
+        <div class="hero-corner hero-corner-tl font-mono" data-reveal-hero>
+            <span>AI · WEB · EDGE</span>
+        </div>
+        <div class="hero-corner hero-corner-tr font-mono" data-reveal-hero>
+            <span>HO CHI MINH CITY</span>
+        </div>
+        <div class="hero-corner hero-corner-br font-mono" data-reveal-hero>
+            <span>UTC +7</span>
+        </div>
+
+        <div class="hero-inner">
+            <p class="hero-kicker label-accent font-mono" data-reveal-hero>
+                <span class="label-rule"></span>
+                Full-stack TypeScript · AI application engineering
+            </p>
+
+            <h1 class="hero-title font-serif">
+                <span class="hero-line" data-line><span data-line-inner>Thanh</span></span>
+                <span class="hero-line" data-line><span data-line-inner class="indent"><em class="italic text-rebar">Nam</em></span></span>
+            </h1>
+
+            <p class="hero-premise font-serif" data-reveal-hero>
+                The engineer to call when an AI idea needs to become a product people actually use.
+            </p>
+
+            <div class="hero-actions" data-reveal-hero>
+                <a href="#projects" class="btn-primary" data-cursor-label="WORK" data-magnetic>
+                    <span>See my work</span>
+                </a>
+                <a href="#contact" class="btn-ghost" data-cursor-label="REACH">
+                    <span>Get in touch</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- ============ SIGNATURE · 3D AI WORKSTATION ============ -->
+        <div class="workstation" id="workstation" aria-hidden="true">
+            <div class="workstation-meta font-mono">
+                <span class="workstation-pulse-dot"></span>
+                <span data-workstation-status>typing product evidence</span>
+                <span>AI build loop</span>
+            </div>
+
+            <div class="workstation-scene">
+                <svg class="station-geometry" viewBox="0 0 820 440" aria-hidden="true">
+                    <defs>
+                        <filter id="station-soft-shadow" x="-18%" y="-18%" width="136%" height="146%">
+                            <feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#16140F" flood-opacity="0.16" />
+                        </filter>
+                        <filter id="station-screen-glow" x="-35%" y="-35%" width="170%" height="170%">
+                            <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#B8422E" flood-opacity="0.24" />
+                        </filter>
+                        <linearGradient id="station-paper-top" x1="0" x2="0" y1="0" y2="1">
+                            <stop offset="0" stop-color="#FFFBF1" />
+                            <stop offset="0.58" stop-color="#F6F2E9" />
+                            <stop offset="1" stop-color="#E6DFD1" />
+                        </linearGradient>
+                        <linearGradient id="station-board-front" x1="0" x2="1" y1="0" y2="1">
+                            <stop offset="0" stop-color="#D9D0BE" />
+                            <stop offset="1" stop-color="#F6F2E9" />
+                        </linearGradient>
+                        <linearGradient id="station-board-side" x1="0" x2="1" y1="0" y2="1">
+                            <stop offset="0" stop-color="#D2C9B6" />
+                            <stop offset="1" stop-color="#E6DFD1" />
+                        </linearGradient>
+                        <linearGradient id="station-screen-fill" x1="0" x2="1" y1="0" y2="1">
+                            <stop offset="0" stop-color="#2B2722" />
+                            <stop offset="1" stop-color="#16140F" />
+                        </linearGradient>
+                        <clipPath id="station-screen-clip">
+                            <polygon points="112,88 458,30 487,216 139,278" />
+                        </clipPath>
+                    </defs>
+
+                    <ellipse class="station-ground" cx="496" cy="386" rx="286" ry="42" />
+
+                    <g class="station-monitor-svg" filter="url(#station-soft-shadow)">
+                        <polygon class="station-monitor-back" points="129,100 488,40 518,242 157,304" />
+                        <polygon class="station-monitor-side" points="488,40 518,54 548,256 518,242" />
+                        <polygon class="station-monitor-base" points="157,304 518,242 548,256 186,320" />
+                        <polygon class="station-monitor-rim" points="98,76 468,12 504,232 129,298" />
+                        <polygon class="station-screen-panel" points="112,88 458,30 487,216 139,278" filter="url(#station-screen-glow)" />
+                        <g class="station-scanlines" clip-path="url(#station-screen-clip)">
+                            <line x1="115" y1="128" x2="488" y2="64" />
+                            <line x1="118" y1="151" x2="491" y2="87" />
+                            <line x1="121" y1="174" x2="494" y2="110" />
+                            <line x1="124" y1="197" x2="497" y2="133" />
+                            <line x1="127" y1="220" x2="500" y2="156" />
+                            <line x1="130" y1="243" x2="503" y2="179" />
+                        </g>
+                        <g class="station-screen-copy" clip-path="url(#station-screen-clip)" transform="rotate(-9 136 122)">
+                            <text class="station-screen-label-svg" x="136" y="122">CANDIDATE RESULT</text>
+                            <text class="station-screen-type-svg" id="station-type" x="136" y="150"></text>
+                        </g>
+                    </g>
+
+                    <g class="station-stand-svg">
+                        <polygon class="station-stand-neck" points="364,258 418,249 452,294 397,305" />
+                        <polygon class="station-stand-foot" points="334,303 486,276 541,304 388,333" />
+                    </g>
+
+                    <g class="station-keyboard-svg" id="station-keyboard" filter="url(#station-soft-shadow)">
+                        <polygon class="station-board-left" points="226,282 342,346 342,380 226,316" />
+                        <polygon class="station-board-right" points="668,204 784,258 784,292 668,238" />
+                        <polygon class="station-board-front" points="342,346 784,258 784,292 342,380" />
+                        <polygon class="station-board-top" points="226,282 668,204 784,258 342,346" />
+                        <polygon class="station-board-inset" points="262,284 661,216 744,255 347,330" />
+                        <g class="station-key-plane" transform="matrix(0.83 -0.147 0.68 0.33 270 287)">
+                            <rect class="station-key is-accent" data-key="q" x="0" y="0" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="w" x="34" y="0" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="e" x="68" y="0" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="r" x="102" y="0" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="t" x="136" y="0" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="y" x="170" y="0" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="u" x="204" y="0" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="i" x="238" y="0" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="o" x="272" y="0" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="p" x="306" y="0" width="26" height="15" rx="1.5" />
+                            <rect class="station-key is-wide" data-key="backspace" x="340" y="0" width="54" height="15" rx="1.5" />
+
+                            <rect class="station-key is-wide is-accent" data-key="tab" x="0" y="26" width="46" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="a" x="54" y="26" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="s" x="88" y="26" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="d" x="122" y="26" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="f" x="156" y="26" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="g" x="190" y="26" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="h" x="224" y="26" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="j" x="258" y="26" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="k" x="292" y="26" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="l" x="326" y="26" width="26" height="15" rx="1.5" />
+
+                            <rect class="station-key is-xl is-accent" data-key="shift" x="0" y="52" width="62" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="z" x="70" y="52" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="x" x="104" y="52" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="c" x="138" y="52" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="v" x="172" y="52" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="b" x="206" y="52" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="n" x="240" y="52" width="26" height="15" rx="1.5" />
+                            <rect class="station-key" data-key="m" x="274" y="52" width="26" height="15" rx="1.5" />
+                            <rect class="station-key is-wide is-return" data-key="enter" x="310" y="52" width="58" height="15" rx="1.5" />
+
+                            <rect class="station-key is-accent" data-key="meta" x="0" y="78" width="32" height="15" rx="1.5" />
+                            <rect class="station-key is-space" data-key="space" x="40" y="78" width="190" height="15" rx="1.5" />
+                            <rect class="station-key is-accent" data-key="ai" x="238" y="78" width="34" height="15" rx="1.5" />
+                            <rect class="station-key is-accent" data-key="edge" x="280" y="78" width="52" height="15" rx="1.5" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <div class="hero-scroll-cue font-mono" aria-hidden="true">
+            <span>SCROLL</span>
+            <span class="hero-scroll-line"></span>
+        </div>
+    </section>
+
+    <!-- =================== 01 · WHY NAM / SCROLLTELLING =================== -->
+    <section class="choice-story" id="why" aria-labelledby="choice-story-title">
+        <div class="choice-story-pin" id="choice-story-pin">
+            <div class="choice-story-frame">
+                <div class="choice-story-meta">
+                    <p class="font-mono">Why choose Nam</p>
+                    <span class="choice-story-count font-mono"><span data-story-count>01</span> / 03</span>
+                </div>
+
+                <div class="choice-story-copy">
+                    <p class="choice-story-kicker font-mono" data-story-kicker>01 · Product proof</p>
+                    <h2 class="font-serif" id="choice-story-title" data-story-title>He ships the thing, not the pitch.</h2>
+                    <p class="font-sans" data-story-copy>
+                        Eragear is the signal: an AI workspace with real account state, streaming UX, model/tool/search controls, and usage metering.
+                    </p>
+                </div>
+
+                <div class="choice-story-proof" aria-hidden="true">
+                    <span class="font-mono" data-story-proof-label>Evidence</span>
+                    <strong class="font-serif" data-story-proof>Live product</strong>
+                </div>
+
+                <div class="choice-story-rail" aria-hidden="true">
+                    <span class="choice-story-progress" id="choice-story-progress"></span>
+                </div>
+
+                <ol class="choice-story-steps font-mono" aria-hidden="true">
+                    <li class="is-active" data-story-dot>Product</li>
+                    <li data-story-dot>System</li>
+                    <li data-story-dot>Proof</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee divider -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track font-serif italic">
+            <span>TypeScript</span><span class="marquee-dot">·</span>
+            <span>React</span><span class="marquee-dot">·</span>
+            <span>Hono</span><span class="marquee-dot">·</span>
+            <span>Cloudflare Workers</span><span class="marquee-dot">·</span>
+            <span>AI SDK</span><span class="marquee-dot">·</span>
+            <span>Drizzle</span><span class="marquee-dot">·</span>
+            <span>TypeScript</span><span class="marquee-dot">·</span>
+            <span>React</span><span class="marquee-dot">·</span>
+            <span>Hono</span><span class="marquee-dot">·</span>
+            <span>Cloudflare Workers</span><span class="marquee-dot">·</span>
+            <span>AI SDK</span><span class="marquee-dot">·</span>
+            <span>Drizzle</span><span class="marquee-dot">·</span>
+        </div>
+    </div>
+
+    <!-- =================== 02 · ABOUT =================== -->
+    <section class="about section-pad" id="about">
+        <div class="section-head">
+            <p class="section-tag font-mono"><span class="section-tag-num">02</span> About</p>
+            <p class="section-tag-right font-mono">Chapter — 02 / 05</p>
+        </div>
+
+        <!-- KPI strip — counts up on view. Real, verifiable numbers. -->
+        <div class="about-kpis" data-reveal>
+            <div class="kpi-cell">
+                <span class="kpi-rule" aria-hidden="true"></span>
+                <strong class="font-serif"><span class="kpi-count" data-count="5">0</span><span class="kpi-unit">yrs</span></strong>
+                <span class="kpi-label font-mono">Building software</span>
+            </div>
+            <div class="kpi-cell">
+                <span class="kpi-rule" aria-hidden="true"></span>
+                <strong class="font-serif"><span class="kpi-count" data-count="1">0</span></strong>
+                <span class="kpi-label font-mono">Live AI product</span>
+            </div>
+            <div class="kpi-cell">
+                <span class="kpi-rule" aria-hidden="true"></span>
+                <strong class="font-serif"><span class="kpi-count" data-count="3">0</span></strong>
+                <span class="kpi-label font-mono">Open-source repos</span>
+            </div>
+            <div class="kpi-cell">
+                <span class="kpi-rule" aria-hidden="true"></span>
+                <strong class="font-serif"><span class="kpi-count" data-count="1">0</span></strong>
+                <span class="kpi-label font-mono">Published Android app</span>
+            </div>
+        </div>
+
+        <div class="about-grid">
+            <p class="about-body font-serif" data-split-lines>
+                Software Engineering graduate focused on full-stack <em class="em-anim">TypeScript</em> and AI application products. I build <em class="em-anim">the whole loop</em> — backend APIs, data models, streaming UX, and the interface — and I care about the parts that make an AI product feel solid: correct routing, <em class="em-anim">durable state</em>, and chat that survives a long session.
+            </p>
+
+            <div class="about-aside" data-reveal>
+                <div class="about-card">
+                    <p class="font-mono text-muted">QUICK FACTS</p>
+                    <ul class="about-facts">
+                        <li><span class="font-mono text-muted">BASED</span> Ho Chi Minh City, Vietnam</li>
+                        <li><span class="font-mono text-muted">EDUCATION</span> Software Engineering, Ton Duc Thang University (2020–2025)</li>
+                        <li><span class="font-mono text-muted">LANGUAGES</span> Vietnamese (native) · English (Aptis B2)</li>
+                        <li><span class="font-mono text-muted">STATUS</span> Open to opportunities</li>
+                    </ul>
+                    <div class="about-rule" aria-hidden="true"></div>
+                    <p class="font-sans text-sm">
+                        I've shipped a live AI workspace, a branching chat UI, a desktop coding
+                        copilot, and a published Android keyboard. I like working across the stack
+                        and owning features end-to-end.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== 03 · EXPERIENCE =================== -->
+    <section class="experience section-pad" id="experience">
+        <div class="section-head">
+            <p class="section-tag font-mono"><span class="section-tag-num">03</span> Experience</p>
+            <p class="section-tag-right font-mono">Selected roles</p>
+        </div>
+
+        <div class="exp-list">
+            <article class="exp-item" data-reveal>
+                <div class="exp-meta">
+                    <span class="exp-period font-mono">05/2024 — 07/2024</span>
+                    <span class="exp-loc font-mono">Ho Chi Minh City</span>
+                </div>
+                <div class="exp-body">
+                    <h3 class="exp-role font-serif">Backend Developer</h3>
+                    <p class="exp-org font-sans">Amazing Technology Solutions Co., Ltd.</p>
+                    <ul class="exp-points">
+                        <li>Contributed to backend development for an enterprise interview-workflow management project.</li>
+                        <li>Worked on Node.js / Express.js backend tasks and API-related delivery within a short project timeline.</li>
+                    </ul>
+                    <div class="exp-stack">
+                        <span class="chip">Node.js</span>
+                        <span class="chip">Express.js</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="exp-item" data-reveal>
+                <div class="exp-meta">
+                    <span class="exp-period font-mono">03/2025 — Present</span>
+                    <span class="exp-loc font-mono">Personal product · live</span>
+                </div>
+                <div class="exp-body">
+                    <h3 class="exp-role font-serif">Full-stack Developer <span class="exp-role-note font-mono">— Eragear</span></h3>
+                    <p class="exp-org font-sans">AI-native workspace · <a href="https://eragear.app" target="_blank" rel="noopener">eragear.app</a></p>
+                    <ul class="exp-points">
+                        <li>Building an AI workspace for long-running conversations, in-context artifacts, research workflows, and agent-powered productivity.</li>
+                        <li>Implemented selectable model/tool/search controls, streaming responses, usage metadata, persistence, and credit-accounting architecture.</li>
+                        <li>Connected the web workspace with browser-assisted research, local knowledge workflows, and agent integrations.</li>
+                    </ul>
+                    <div class="exp-stack">
+                        <span class="chip">TanStack / React</span>
+                        <span class="chip">Hono</span>
+                        <span class="chip">CF Workers / D1</span>
+                        <span class="chip">Drizzle</span>
+                        <span class="chip">AI SDK</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- =================== 04 · SKILLS =================== -->
+    <section class="skills section-pad" id="skills">
+        <div class="section-head">
+            <p class="section-tag font-mono"><span class="section-tag-num">04</span> Skills</p>
+            <p class="section-tag-right font-mono">The toolchain</p>
+        </div>
+
+        <h2 class="skills-title font-serif" data-reveal>
+            What I <em class="italic text-rebar">build</em> with
+        </h2>
+
+        <div class="skills-grid">
+            <div class="skill-col" data-reveal>
+                <h3 class="skill-col-label"><span class="skill-col-num font-mono">01</span> Languages</h3>
+                <ul class="skill-list">
+                    <li style="--lvl:1"><span class="skill-name font-sans">TypeScript</span><span class="skill-lvl font-mono">primary</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:1"><span class="skill-name font-sans">JavaScript</span><span class="skill-lvl font-mono">primary</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.6"><span class="skill-name font-sans">Kotlin</span><span class="skill-lvl font-mono">mobile</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                </ul>
+            </div>
+            <div class="skill-col" data-reveal>
+                <h3 class="skill-col-label"><span class="skill-col-num font-mono">02</span> Frontend</h3>
+                <ul class="skill-list">
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">React</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">Next.js</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">TanStack</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">Tailwind</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">Zustand</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                </ul>
+            </div>
+            <div class="skill-col" data-reveal>
+                <h3 class="skill-col-label"><span class="skill-col-num font-mono">03</span> Backend</h3>
+                <ul class="skill-list">
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">Node.js</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">Hono</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.7"><span class="skill-name font-sans">Express.js</span><span class="skill-lvl font-mono">advanced</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">REST / tRPC</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                </ul>
+            </div>
+            <div class="skill-col" data-reveal>
+                <h3 class="skill-col-label"><span class="skill-col-num font-mono">04</span> Data · Auth · Infra</h3>
+                <ul class="skill-list">
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">Drizzle</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">Cloudflare Workers / D1</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.7"><span class="skill-name font-sans">SQLite</span><span class="skill-lvl font-mono">advanced</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">Better Auth</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">Bun / Turborepo</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                </ul>
+            </div>
+            <div class="skill-col" data-reveal>
+                <h3 class="skill-col-label"><span class="skill-col-num font-mono">05</span> AI Application</h3>
+                <ul class="skill-list">
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">AI SDK</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">Streaming chat</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">Model / tool routing</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.88"><span class="skill-name font-sans">Context control</span><span class="skill-lvl font-mono">expert</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                </ul>
+            </div>
+            <div class="skill-col" data-reveal>
+                <h3 class="skill-col-label"><span class="skill-col-num font-mono">06</span> Mobile</h3>
+                <ul class="skill-list">
+                    <li style="--lvl:0.7"><span class="skill-name font-sans">Android</span><span class="skill-lvl font-mono">advanced</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                    <li style="--lvl:0.7"><span class="skill-name font-sans">Jetpack Compose</span><span class="skill-lvl font-mono">advanced</span><span class="skill-bar" aria-hidden="true"><span class="skill-bar-fill"></span></span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== 05 · PROJECTS =================== -->
+    <section class="projects section-pad" id="projects">
+        <div class="section-head">
+            <p class="section-tag font-mono"><span class="section-tag-num">05</span> Selected Work</p>
+            <p class="section-tag-right font-mono">2024 — 2026</p>
+        </div>
+
+        <div class="projects-list" id="projects-list">
+            <a href="https://eragear.app" target="_blank" rel="noopener" class="project-row" data-project="0" data-cursor-label="ERAGEAR">
+                <span class="project-num font-mono">01</span>
+                <span class="project-main">
+                    <span class="project-line-1">
+                        <span class="project-name font-serif">Eragear AI — AI-native workspace</span>
+                        <span class="project-badge is-live"><span class="badge-dot" aria-hidden="true"></span>LIVE</span>
+                    </span>
+                    <span class="project-proof font-sans">Streaming workspace with model/tool/search controls, durable state, and usage metering.</span>
+                    <span class="project-line-2">
+                        <span class="project-type font-mono">Full-stack · AI</span>
+                        <span class="project-chips" aria-hidden="true">
+                            <span class="chip">TanStack · React</span>
+                            <span class="chip">Hono</span>
+                            <span class="chip">CF Workers / D1</span>
+                            <span class="chip">AI SDK</span>
+                        </span>
+                        <span class="project-year font-mono">2025—now</span>
+                    </span>
+                </span>
+                <span class="project-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="https://github.com/TongDucThanhNam/ai-chatbot-tree" target="_blank" rel="noopener" class="project-row" data-project="1" data-cursor-label="CHATBOT TREE">
+                <span class="project-num font-mono">02</span>
+                <span class="project-main">
+                    <span class="project-line-1">
+                        <span class="project-name font-serif">AI Chatbot Tree — branching chat UI</span>
+                        <span class="project-badge is-oss">OPEN SOURCE</span>
+                    </span>
+                    <span class="project-proof font-sans">Branch-aware chat interface for exploring alternate AI conversations without losing context.</span>
+                    <span class="project-line-2">
+                        <span class="project-type font-mono">Next.js · AI SDK</span>
+                        <span class="project-chips" aria-hidden="true">
+                            <span class="chip">AI SDK v6</span>
+                            <span class="chip">Zustand</span>
+                            <span class="chip">D3 · React Flow</span>
+                        </span>
+                        <span class="project-year font-mono">personal</span>
+                    </span>
+                </span>
+                <span class="project-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="https://github.com/TongDucThanhNam/eragear-code-copilot" target="_blank" rel="noopener" class="project-row" data-project="2" data-cursor-label="COPILOT">
+                <span class="project-num font-mono">03</span>
+                <span class="project-main">
+                    <span class="project-line-1">
+                        <span class="project-name font-serif">Eragear Code Copilot — desktop AI coder</span>
+                        <span class="project-badge is-oss">OPEN SOURCE</span>
+                    </span>
+                    <span class="project-proof font-sans">Desktop agent shell experimenting with coding workflows, protocol boundaries, and local tools.</span>
+                    <span class="project-line-2">
+                        <span class="project-type font-mono">Electron · ACP</span>
+                        <span class="project-chips" aria-hidden="true">
+                            <span class="chip">Electron</span>
+                            <span class="chip">Agent Client Protocol</span>
+                            <span class="chip">Hono / tRPC</span>
+                            <span class="chip">Turborepo</span>
+                        </span>
+                        <span class="project-year font-mono">personal</span>
+                    </span>
+                </span>
+                <span class="project-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.terasumi.sellerkeyboard" target="_blank" rel="noopener" class="project-row" data-project="3" data-cursor-label="KEYBOARD">
+                <span class="project-num font-mono">04</span>
+                <span class="project-main">
+                    <span class="project-line-1">
+                        <span class="project-name font-serif">Seller Keyboard — published Android app</span>
+                        <span class="project-badge is-published">PUBLISHED · 100+ INSTALLS</span>
+                    </span>
+                    <span class="project-proof font-sans">A shipped Android keyboard utility for sellers, published to Google Play with real users.</span>
+                    <span class="project-line-2">
+                        <span class="project-type font-mono">Kotlin · Compose</span>
+                        <span class="project-chips" aria-hidden="true">
+                            <span class="chip">Android</span>
+                            <span class="chip">Jetpack Compose</span>
+                            <span class="chip">Google Play</span>
+                        </span>
+                        <span class="project-year font-mono">2024</span>
+                    </span>
+                </span>
+                <span class="project-arrow" aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <!-- Floating preview that follows cursor -->
+        <div class="project-preview" id="project-preview" aria-hidden="true">
+            <div class="project-preview-art" data-preview="0">
+                <svg viewBox="0 0 200 150" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <rect x="20" y="20" width="160" height="110"/>
+                    <line x1="20" y1="44" x2="180" y2="44"/>
+                    <circle cx="34" cy="32" r="3"/><circle cx="46" cy="32" r="3"/><circle cx="58" cy="32" r="3"/>
+                    <rect x="34" y="60" width="70" height="50" stroke-dasharray="3 3"/>
+                    <path d="M120 70 L160 70 M120 84 L160 84 M120 98 L150 98"/>
+                    <circle cx="140" cy="115" r="6"/>
+                </svg>
+            </div>
+            <div class="project-preview-art" data-preview="1">
+                <svg viewBox="0 0 200 150" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <circle cx="100" cy="30" r="10"/>
+                    <circle cx="60" cy="75" r="10"/>
+                    <circle cx="140" cy="75" r="10"/>
+                    <circle cx="40" cy="120" r="10"/>
+                    <circle cx="100" cy="120" r="10"/>
+                    <circle cx="160" cy="120" r="10"/>
+                    <line x1="100" y1="40" x2="60" y2="65"/>
+                    <line x1="100" y1="40" x2="140" y2="65"/>
+                    <line x1="60" y1="85" x2="40" y2="110"/>
+                    <line x1="60" y1="85" x2="100" y2="110"/>
+                    <line x1="140" y1="85" x2="100" y2="110"/>
+                    <line x1="140" y1="85" x2="160" y2="110"/>
+                </svg>
+            </div>
+            <div class="project-preview-art" data-preview="2">
+                <svg viewBox="0 0 200 150" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <rect x="30" y="30" width="140" height="90"/>
+                    <line x1="30" y1="30" x2="30" y2="20"/>
+                    <line x1="170" y1="30" x2="170" y2="20"/>
+                    <path d="M30 20 L20 30 M170 20 L180 30"/>
+                    <line x1="50" y1="60" x2="150" y2="60"/>
+                    <line x1="50" y1="80" x2="130" y2="80"/>
+                    <rect x="50" y="95" width="60" height="15"/>
+                </svg>
+            </div>
+            <div class="project-preview-art" data-preview="3">
+                <svg viewBox="0 0 200 150" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <rect x="70" y="15" width="60" height="120" rx="8"/>
+                    <line x1="70" y1="35" x2="130" y2="35"/>
+                    <line x1="70" y1="115" x2="130" y2="115"/>
+                    <rect x="80" y="48" width="40" height="12"/>
+                    <rect x="80" y="66" width="40" height="12"/>
+                    <rect x="80" y="84" width="40" height="12"/>
+                    <circle cx="100" cy="125" r="4"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== 06 · CONTACT =================== -->
+    <section class="contact" id="contact">
+        <div class="contact-bg" aria-hidden="true">
+            <div class="contact-disc" data-depth="0.20"></div>
+            <div class="contact-ghost font-serif italic" data-depth="0.10">hi</div>
+        </div>
+
+        <div class="contact-inner section-pad">
+            <p class="label-accent font-mono" data-reveal>
+                <span class="label-rule"></span>
+                Let's talk
+            </p>
+            <h2 class="contact-title font-serif" data-reveal>
+                Building something?<br>Let's <em class="italic text-rebar">talk</em>.
+            </h2>
+
+            <div class="contact-grid">
+                <div class="contact-info" data-reveal>
+                    <div class="contact-block">
+                        <p class="font-mono text-muted">EMAIL</p>
+                        <p class="font-serif contact-phone"><a href="mailto:tongducthanhnam@gmail.com">tongducthanhnam@gmail.com</a></p>
+                    </div>
+                    <div class="contact-block">
+                        <p class="font-mono text-muted">PHONE</p>
+                        <p class="font-serif">0869 887 363</p>
+                    </div>
+                    <div class="contact-block">
+                        <p class="font-mono text-muted">BASED</p>
+                        <p class="font-serif">Ho Chi Minh City, Vietnam · UTC +7</p>
+                    </div>
+                    <div class="contact-block">
+                        <p class="font-mono text-muted">ELSEWHERE</p>
+                        <p class="font-serif"><a href="https://github.com/TongDucThanhNam" target="_blank" rel="noopener">GitHub ↗</a> · <a href="https://tongducthanhnam.id.vn" target="_blank" rel="noopener">tongducthanhnam.id.vn ↗</a></p>
+                    </div>
+                </div>
+
+                <form class="contact-form" data-reveal id="contact-form" novalidate>
+                    <p class="contact-form-label font-mono">SEND A MESSAGE</p>
+                    <div class="field">
+                        <input type="text" id="cf-name" required placeholder=" ">
+                        <label for="cf-name" class="font-mono">Your name</label>
+                    </div>
+                    <div class="field">
+                        <input type="email" id="cf-email" required placeholder=" ">
+                        <label for="cf-email" class="font-mono">Your email</label>
+                    </div>
+                    <div class="field">
+                        <textarea id="cf-msg" rows="3" placeholder=" "></textarea>
+                        <label for="cf-msg" class="font-mono">Message</label>
+                    </div>
+                    <button type="submit" class="btn-primary btn-block" data-magnetic data-cursor-label="SEND">
+                        <span>Send Message</span>
+                    </button>
+                    <p class="contact-form-note font-mono" id="contact-form-note" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <!-- Magnetic circular CTA -->
+            <div class="contact-magnetic-wrap" data-reveal>
+                <a href="mailto:tongducthanhnam@gmail.com" class="contact-magnetic" id="contact-magnetic" data-cursor-label="EMAIL">
+                    <span class="contact-magnetic-inner font-mono">
+                        <span>GET</span>
+                        <span>IN TOUCH</span>
+                    </span>
+                </a>
+                <p class="font-mono contact-magnetic-label">I read every message</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <!-- =================== FOOTER =================== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <p class="footer-mark font-serif">Thanh<span class="text-rebar"> ·</span> Nam</p>
+                <p class="font-mono text-muted">Full-stack TypeScript Engineer · HCMC</p>
+            </div>
+            <div class="footer-col">
+                <p class="font-mono footer-col-label">CHAPTERS</p>
+                <a href="#about" class="font-sans">About</a>
+                <a href="#experience" class="font-sans">Experience</a>
+                <a href="#skills" class="font-sans">Skills</a>
+                <a href="#projects" class="font-sans">Work</a>
+            </div>
+            <div class="footer-col">
+                <p class="font-mono footer-col-label">WORK</p>
+                <a href="https://eragear.app" target="_blank" rel="noopener" class="font-sans">Eragear ↗</a>
+                <a href="https://github.com/TongDucThanhNam" target="_blank" rel="noopener" class="font-sans">GitHub ↗</a>
+                <a href="https://play.google.com/store/apps/details?id=com.terasumi.sellerkeyboard" target="_blank" rel="noopener" class="font-sans">Seller Keyboard ↗</a>
+            </div>
+            <div class="footer-col">
+                <p class="font-mono footer-col-label">SIGNAL</p>
+                <span class="font-sans">SE Graduate · TDTU 2025</span>
+                <span class="font-sans">English · Aptis B2</span>
+                <span class="font-sans">Vietnamese · Native</span>
+            </div>
+        </div>
+        <div class="footer-base">
+            <span class="font-mono">© 2026 TONG DUC THANH NAM</span>
+            <span class="font-mono">HCMC · VN · UTC+7</span>
+            <span class="font-mono">v2.0</span>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
