@@ -7,12 +7,12 @@ export const Route = createFileRoute("/")({
 		meta: [
 			{
 				title:
-					"Tong Duc Thanh Nam - Full-stack TypeScript / AI Application Engineer",
+					"Tong Duc Thanh Nam - AI Product Builder / Full-stack TypeScript Developer",
 			},
 			{
 				name: "description",
 				content:
-					"Tong Duc Thanh Nam builds full-stack TypeScript and AI application products, from backend APIs and durable state to streaming UX.",
+					"Tong Duc Thanh Nam turns vague workflows into working AI products, browser extensions, automation tools, web apps, and mobile utilities.",
 			},
 		],
 	}),

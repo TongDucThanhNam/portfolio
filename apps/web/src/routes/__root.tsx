@@ -80,11 +80,14 @@ function RootComponent() {
 
 function RootDocument({ children }: { children: ReactNode }) {
 	return (
-		<html lang="en" className="scroll-smooth bg-bone text-ink">
+		<html
+			lang="en"
+			className="scroll-smooth bg-bone text-ink [scrollbar-color:var(--color-rebar)_var(--color-bone)]"
+		>
 			<head>
 				<HeadContent />
 			</head>
-			<body>
+			<body className="m-0 min-w-[320px] bg-bone font-sans text-ink antialiased selection:bg-rebar selection:text-paper">
 				{children}
 				<Scripts />
 			</body>

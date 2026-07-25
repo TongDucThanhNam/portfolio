@@ -10,8 +10,8 @@ Personal portfolio for Tong Duc Thanh Nam, migrated from Astro to a Better-T-Sta
 - Vite 8
 - Cloudflare deployment through Alchemy
 - Cloudflare D1 with Drizzle in `packages/db`
-- Tailwind CSS 4 via `@tailwindcss/vite`, with the `DESIGN.md` bone/ink/rebar theme defined in CSS
-- Lenis + GSAP ScrollTrigger for portfolio scroll, reveal, story, cursor-preview, and typewriter motion
+- Tailwind CSS 4 via `@tailwindcss/vite`, with utility-only component styling and the `DESIGN.md` bone/ink/rebar tokens defined through CSS-first `@theme`
+- React state, Intersection Observer, and browser-native scrolling for reveal, chapter, tab, and progress behavior
 
 ## Getting Started
 
@@ -79,8 +79,8 @@ npm run destroy
 - `apps/web/src/router.tsx` - TanStack Start router entry via `getRouter()`
 - `apps/web/vite.config.ts` - Tailwind CSS v4, TanStack Start, React, Cloudflare/Alchemy plugin, and aliases
 - `DESIGN.md` - canonical portfolio design system copied from `nam-portfolio/DESIGN.md`
-- `apps/web/src/components/NamPortfolio.tsx` - React/Tailwind port of the `nam-portfolio` HTML/CSS/JS experience, including Lenis/GSAP motion setup
-- `apps/web/src/styles/global.css` - Tailwind v4 entry, CSS-first theme tokens, and small global interaction primitives
+- `apps/web/src/components/NamPortfolio.tsx` - React/Tailwind portfolio entry
+- `apps/web/src/styles/global.css` - the sole source stylesheet: Tailwind v4 entry plus CSS-first theme and animation tokens
 - `packages/infra/alchemy.run.ts` - Cloudflare Worker app and D1 resource graph
 - `packages/db/` - Drizzle schema and D1 migration generation
 - `packages/env/` - typed Cloudflare Worker bindings and local shim
@@ -89,7 +89,7 @@ npm run destroy
 
 Astro config, layouts, pages, integrations, and `.astro` components were removed. The page is now composed as a TanStack Start file route.
 
-The home route currently uses `ssr: false` because the portfolio contains browser-only scroll, cursor, and typewriter interactions. Server rendering can be reintroduced after those interactions are isolated behind client-only boundaries.
+The home route currently uses `ssr: false` because the portfolio contains browser-only motion, scroll-progress, and intersection-observer interactions. Server rendering can be reintroduced after those interactions are isolated behind client-only boundaries.
 
 The repository now follows the Better-T-Stack shape for `tanstack-start + backend self + sqlite/drizzle + D1 + Cloudflare web deploy`: web app in `apps/web`, infra in `packages/infra`, database schema in `packages/db`, and environment bindings in `packages/env`.
 
@@ -100,6 +100,7 @@ Current migration gates:
 ```sh
 npm run typecheck
 npm run build
+npm run check:tailwind-only
 npm run db:generate
 ```
 

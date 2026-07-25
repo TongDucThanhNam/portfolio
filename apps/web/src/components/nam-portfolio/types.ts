@@ -18,17 +18,39 @@ export type StoryBeat = {
 export type SkillGroup = {
 	num: string;
 	label: string;
-	items: Array<{ name: string; level: string; value: number }>;
+	description: string;
+	items: string[];
 };
+
+export type ProjectStatusTone =
+	| "live"
+	| "published"
+	| "private"
+	| "progress"
+	| "prototype";
+
+export type ProjectVisual =
+	| "extension"
+	| "workspace"
+	| "inbox"
+	| "automation"
+	| "desktop"
+	| "tree"
+	| "mobile"
+	| "commerce"
+	| "recommendation";
 
 export type Project = {
 	name: string;
-	status: "LIVE" | "OPEN SOURCE" | "PUBLISHED - 100+ INSTALLS";
-	statusTone: "live" | "oss" | "published";
+	status: string;
+	statusTone: ProjectStatusTone;
 	proof: string;
 	type: string;
 	stack: string[];
-	year: string;
-	href: string;
+	highlights: string[];
+	href?: string;
+	linkLabel?: string;
 	cursor: string;
+	visual: ProjectVisual;
+	featured: boolean;
 };

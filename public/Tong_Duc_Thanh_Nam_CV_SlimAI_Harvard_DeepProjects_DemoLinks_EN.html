@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tong Duc Thanh Nam - AI Developer Intern CV</title>
+  <style>
+    :root {
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --margin-x: 14mm;
+      --margin-y: 12mm;
+      --font-main: "Times New Roman", Times, serif;
+      --ink: #111;
+      --muted: #333;
+      --rule: #111;
+      --font-size: 9.65pt;
+      --line-height: 1.18;
+      --section-gap: 8px;
+      --item-gap: 6px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f5f5f5;
+      color: var(--ink);
+      font-family: var(--font-main);
+      font-size: var(--font-size);
+      line-height: var(--line-height);
+    }
+
+    a { color: inherit; text-decoration: none; overflow-wrap: anywhere; }
+
+    .page {
+      width: var(--page-width);
+      min-height: var(--page-height);
+      margin: 16px auto;
+      padding: var(--margin-y) var(--margin-x);
+      background: #fff;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+    }
+
+    header { text-align: center; margin-bottom: 8px; }
+
+    h1 {
+      margin: 0;
+      font-size: 18pt;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    .target-title {
+      margin-top: 3px;
+      font-size: 10.4pt;
+      font-weight: 700;
+    }
+
+    .contact {
+      margin-top: 3px;
+      font-size: 8.6pt;
+      color: var(--muted);
+      line-height: 1.18;
+    }
+
+    section { margin-top: var(--section-gap); }
+
+    h2 {
+      margin: 0 0 4px;
+      padding-bottom: 1.5px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 10.2pt;
+      line-height: 1.05;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    p { margin: 0; }
+
+    .summary { text-align: left; }
+
+    .line { margin: 1px 0; }
+
+    .label { font-weight: 700; }
+
+    .item {
+      margin-top: var(--item-gap);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .item-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      column-gap: 12px;
+      align-items: baseline;
+    }
+
+    .item-title { font-weight: 700; }
+
+    .item-meta {
+      white-space: nowrap;
+      font-size: 8.9pt;
+      color: var(--muted);
+    }
+
+    .subline {
+      margin-top: 1px;
+      font-size: 8.75pt;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 2px 0 0 15px;
+      padding: 0;
+    }
+
+    li { margin: 1.3px 0; }
+
+    .dense li { margin: 0.85px 0; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 14px;
+      row-gap: 0;
+    }
+
+    .education-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      column-gap: 12px;
+    }
+
+    .small { font-size: 8.7pt; color: var(--muted); }
+
+    @page { size: A4; margin: 12mm 14mm; }
+
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; width: auto; min-height: auto; padding: 0; }
+    }
+
+    @media (max-width: 840px) {
+      .page { width: 100%; min-height: auto; margin: 0; padding: 20px 16px; }
+      .item-head, .skills-grid, .education-row { grid-template-columns: 1fr; }
+      .item-meta { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Tong Duc Thanh Nam</h1>
+      <div class="target-title">AI Developer Intern | AI Product Builder | Full-stack TypeScript Developer</div>
+      <div class="contact">
+        Ho Chi Minh City, Vietnam | 0869887363 | <a href="mailto:tongducthanhnam@gmail.com">tongducthanhnam@gmail.com</a><br />
+        <a href="https://github.com/TongDucThanhNam">github.com/TongDucThanhNam</a> | <a href="https://tongducthanhnam.id.vn">tongducthanhnam.id.vn</a> | English: Aptis B2
+      </div>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary">
+        Software Engineering graduate focused on AI application products, browser extensions, automation tools, web apps, and mobile utilities. Built and shipped projects across AI workspaces, published Chrome/Firefox extensions, Discord operations bots, knowledge inbox tools, e-commerce prototypes, and Android apps. Strongest value: turning vague workflows into working products across UI, backend, persistence, external APIs, automation, deployment, and AI-assisted prototyping.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="line"><span class="label">Languages:</span> TypeScript, JavaScript, Kotlin, Python</div>
+        <div class="line"><span class="label">AI Apps:</span> Vercel AI SDK, streaming responses, model/tool routing, BYOM workflows</div>
+        <div class="line"><span class="label">Frontend:</span> React, Next.js, TanStack, Tailwind CSS, Zustand, Shadcn/UI</div>
+        <div class="line"><span class="label">Backend:</span> Hono, Express.js, Node.js, tRPC, REST APIs, Bun</div>
+        <div class="line"><span class="label">Extensions:</span> WXT, Chrome Extension, Firefox Extension, content scripts, service workers, tab messaging</div>
+        <div class="line"><span class="label">Data/Infra:</span> Cloudflare Workers/D1/R2, Drizzle, SQLite, MongoDB, Google Sheets API</div>
+        <div class="line"><span class="label">Automation:</span> Discord bots, slash commands, webhooks, RBAC flows, OCR fallback</div>
+        <div class="line"><span class="label">Mobile:</span> Android IME, Jetpack Compose, Kotlin</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <article class="item">
+        <div class="item-head">
+          <div class="item-title">Backend Developer - Amazing Technology Solutions Co., Ltd.</div>
+          <div class="item-meta">May 2024 - Jul 2024</div>
+        </div>
+        <div class="subline">Ho Chi Minh City, Vietnam | Node.js, Express.js</div>
+        <ul class="dense">
+          <li>Contributed to backend development for an enterprise interview workflow management project.</li>
+          <li>Worked on Node.js/Express.js backend tasks and API-related delivery in a short project timeline.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Selected Projects and Products</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-title">Eragear Web Copilot - Published Browser Extension</div>
+          <div class="item-meta">Chrome + Firefox</div>
+        </div>
+        <div class="subline">Repository: <a href="https://github.com/TongDucThanhNam/eragear-web-extension">github.com/TongDucThanhNam/eragear-web-extension</a> | WXT, React, Tailwind CSS, browser APIs</div>
+        <ul class="dense">
+          <li>Built and published a browser extension that connects browsing context with an AI workspace through a client-side bridge and BYOM workflow.</li>
+          <li>Implemented Google Search overlay, tab discovery/opening, tab-to-tab provider messaging, AI-site settings, auto-submit controls, copy helpers, and streaming response UI.</li>
+          <li>Built a research workflow where the user verifies search results and pages before clipped content is converted into clean Markdown and sent back into the AI context.</li>
+          <li>Designed around privacy-first constraints: local browser execution, direct provider-session interaction, and no extra middleman server for prompt/response handling.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-title">Eragear AI Workspace - AI-native Web App</div>
+          <div class="item-meta">Full-stack AI Product</div>
+        </div>
+        <div class="subline">Live: <a href="https://eragear-web-terasumi.terasumi.workers.dev">eragear-web-terasumi.terasumi.workers.dev</a> | React/TanStack, Hono, Cloudflare Workers/D1, Drizzle, Better Auth, Bun, AI SDK</div>
+        <ul class="dense">
+          <li>Built an AI workspace for long-running conversations, artifacts, model/tool selection, research flows, and human-in-the-loop interaction.</li>
+          <li>Implemented core AI product flows: streaming chat, selectable model/tool/search controls, usage metadata, persistence, credit-accounting architecture, and Cloudflare deployment.</li>
+          <li>Explored context engineering patterns by separating chat UX, artifact sidecar, research input, local knowledge, and browser-assisted workflows instead of treating AI as a plain chatbot box.</li>
+          <li>Built the product as a small SaaS-style system with authentication, database schema, backend routes, frontend workspace state, and deployable Cloudflare infrastructure.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-title">Private Operations Discord Bot - Internal Company Automation</div>
+          <div class="item-meta">Automation Tool</div>
+        </div>
+        <div class="subline">Bun, TypeScript, discord.js, sunar, Google Sheets API, webhooks, RBAC, testable domain modules</div>
+        <ul class="dense">
+          <li>Built a Discord bot to support internal operations for a company, without exposing the company's private operational data in public materials.</li>
+          <li>Implemented HR workflows for leave, overtime, late/early requests, personal statistics, admin registration/editing, and Google Sheets persistence.</li>
+          <li>Added operations modules for banking notifications, vehicle route/fuel records, fuel invoice XML parsing, Gemini OCR fallback for image invoices, and PO receipt drafts.</li>
+          <li>Separated Discord handlers from business logic using module boundaries, slash commands, modal/button interactions, role-based permissions, environment validation, tests, and deployment runbooks.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-title">Link Saver - Knowledge Inbox Web App + Extension</div>
+          <div class="item-meta">Product Prototype</div>
+        </div>
+        <div class="subline">Demo: <a href="https://link-saver-web-terasumi.terasumi.workers.dev">link-saver-web-terasumi.terasumi.workers.dev</a> | TanStack Start, React, WXT, tRPC, Better Auth, Drizzle, Cloudflare D1/R2, Polar, Bun/Turborepo</div>
+        <ul class="dense">
+          <li>Built and deployed a knowledge inbox around the product loop: save URL/current tab, extract readable content, archive snapshots, read, search/recall, and export.</li>
+          <li>Designed a monorepo with web app, browser extension, API package, auth package, database schema/migrations, shared UI, typed environment access, and Cloudflare deployment package.</li>
+          <li>Modeled storage boundaries with relational metadata in D1/SQLite and large archived snapshots in R2, with AI summaries grounded by citations and export targets such as Markdown, JSON, and llms.md.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-title">Eragear Code Copilot - Desktop-first AI Coding Assistant</div>
+          <div class="item-meta">In Progress</div>
+        </div>
+        <div class="subline">Electron, Agent Client Protocol, TypeScript, runtime packages, tRPC, Bun/Turborepo</div>
+        <ul class="dense">
+          <li>Designed a desktop-first AI coding assistant around Electron, Agent Client Protocol, shared runtime packages, and strict app/runtime package boundaries.</li>
+          <li>Kept Electron main/preload thin and moved business behavior into runtime packages: session lifecycle, tool-call handling, permission boundaries, persistence, settings, background tasks, and tRPC procedures.</li>
+          <li>Modeled a private local execution path from renderer to preload bridge, Electron IPC, DesktopRuntimeHost, runtime service over stdio NDJSON, runtime use cases, and ACP agent process.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-title">AI Chatbot Tree - Branching Conversation and Context Control</div>
+          <div class="item-meta">AI UX Prototype</div>
+        </div>
+        <div class="subline">Demo: <a href="https://ai-chatbot-tree.vercel.app">ai-chatbot-tree.vercel.app</a> | Next.js, AI SDK, Zustand, D3.js, React Flow, Tailwind CSS</div>
+        <ul class="dense">
+          <li>Built and deployed a tree-based chat UI where the Conversation Tree is the single source of truth and the model context is projected from an explicit recipe.</li>
+          <li>Implemented branching, regeneration, manual message insertion, context preview/export/import/reset, D3/React Flow visualization, and local persistence with compression/checksum.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-title">Seller Keyboard - Published Android Utility App</div>
+          <div class="item-meta">Google Play</div>
+        </div>
+        <div class="subline">Google Play: <a href="https://play.google.com/store/apps/details?id=com.terasumi.sellerkeyboard">com.terasumi.sellerkeyboard</a> | Kotlin, Android IME, Jetpack Compose</div>
+        <ul class="dense">
+          <li>Published a custom Android keyboard with 100+ downloads for online sellers to insert reusable text/image snippets while chatting with customers.</li>
+          <li>Focused on a narrow workflow: reducing repeated typing for product introductions, prices, promotions, customer replies, and seller chat operations.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-title">rem-viet - Full-stack E-commerce Website</div>
+          <div class="item-meta">Public Repository</div>
+        </div>
+        <div class="subline">Demo: <a href="https://rem-viet-web-terasumi.terasumi.workers.dev">rem-viet-web-terasumi.terasumi.workers.dev</a> | React/Next.js, Node.js, Express.js, MongoDB, Docker, Bun/Turborepo</div>
+        <ul class="dense">
+          <li>Built and deployed a full-stack e-commerce website for selling curtains and blinds with separate frontend/backend services and Dockerized local execution.</li>
+          <li>Implemented learning-oriented backend/frontend architecture: Express routing/middleware, MongoDB/Mongoose CRUD schema, controller/service/repository separation, Swagger API docs, Next.js routing/fetching/SSR, and dashboard/admin-oriented roadmap.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <div class="item-title">FashionAI - Personalized E-commerce with AI Recommendation</div>
+          <div class="item-meta">Academic/Product Prototype</div>
+        </div>
+        <div class="subline">Next.js, Shadcn/UI, Tailwind CSS, Node.js, Express.js, MongoDB, Python, FastAPI, Pandas, NumPy, Scikit-learn, TensorFlow</div>
+        <ul class="dense">
+          <li>Built a personalized e-commerce website prototype using an AI service layer for recommendation-related workflows.</li>
+          <li>Separated the system into frontend, backend, and AI service setup, with Docker Compose deployment path and local development instructions for each service.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="education-row">
+        <div><span class="label">Ton Duc Thang University</span> - Software Engineering</div>
+        <div class="item-meta">Sep 2020 - Apr 2025</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,312 @@
+[NamPortfolio] apps/web/src/components/nam-portfolio/NamPortfolio.tsx (full route surface)
+  [source] apps/web/src/components/nam-portfolio/NamPortfolio.tsx
+    [component inventory]
+      [NamPortfolio] apps/web/src/components/nam-portfolio/NamPortfolio.tsx:13
+    [semantic hierarchy]
+      [a] (href=#portfolio-main | attrs=className="skip-link" href="#portfolio-main") @ apps/web/src/components/nam-portfolio/NamPortfolio.tsx:24
+      [main] (id=portfolio-main | attrs=id="portfolio-main" tabIndex={-1}) @ apps/web/src/components/nam-portfolio/NamPortfolio.tsx:47
+    [visible copy and content literals]
+      "Skip to content" @ apps/web/src/components/nam-portfolio/NamPortfolio.tsx:24
+  [source] apps/web/src/components/nam-portfolio/hooks/index.ts
+    [component inventory]
+    [semantic hierarchy]
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/layout/index.ts
+    [component inventory]
+    [semantic hierarchy]
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/sections/AboutSection.tsx
+    [component inventory]
+      [AboutSection] apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:4
+    [semantic hierarchy]
+      [section] (id=about | attrs=id="about" className="section-pad bg-paper") @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:6
+      [p] (attrs=className="max-w-[15em] font-serif text-[clamp(2.5rem,6vw,5.6rem)] leading-[1.02] tracking-[-0.035em]") @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:15
+      [aside] (attrs=className="self-start border border-line bg-bone p-7") @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:22
+      [p] (attrs=className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:23
+      [p] (attrs=className="text-sm leading-6 text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:54
+      [a] (href=/Tong_Duc_Thanh_Nam_CV_EN.pdf | attrs=href="/Tong_Duc_Thanh_Nam_CV_EN.pdf" target="_blank" rel="noreferrer" className="mt-6 inline-flex border-b border-rebar pb-1 font…) @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:58
+    [visible copy and content literals]
+      "About" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:7
+      "Products / prototypes" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:9
+      "Browser platforms" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:10
+      "Android downloads" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:11
+      "Completed SE program" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:12
+      "working products" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:19
+      "Quick facts" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:23
+      "Based" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:28
+      "Ho Chi Minh City, Vietnam" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:30
+      "Education" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:34
+      "Software Engineering, Ton Duc Thang University (09/2020 - 04/2025)" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:36
+      "Languages" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:40
+      "Vietnamese (native) / English (Aptis B2)" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:42
+      "Status" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:46
+      "AI Developer Intern / AI Product Builder / Full-stack TypeScript Developer" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:48
+      "Published Web Copilot on Chrome and Firefox, deployed an AI workspace and web demos, and shipped Seller Keyboard to Google Play." @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:54
+      "Read the full CV ↗" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:63
+  [source] apps/web/src/components/nam-portfolio/sections/ContactSection.tsx
+    [component inventory]
+      [ContactSection] apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:3
+    [semantic hierarchy]
+      [section] (id=contact | attrs=id="contact" className="relative overflow-hidden bg-ink text-paper") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:5
+      [p] (attrs=className="label-accent !text-paper") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:20
+      [h2] (attrs=className="mt-8 max-w-[11em] font-serif text-[clamp(3.8rem,10vw,10rem)] leading-[0.9] tracking-[-0.04em]") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:24
+      [a] (href=mailto:tongducthanhnam@gmail.com | attrs=href="mailto:tongducthanhnam@gmail.com" className="group mt-[clamp(48px,8vw,112px)] grid gap-6 border-y border-[rgba(246,242,233,…) @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:29
+      [a] (href=tel:+84869887363 | attrs=href="tel:+84869887363" className="transition hover:text-rebar") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:49
+      [a] (href=https://github.com/TongDucThanhNam | attrs=href="https://github.com/TongDucThanhNam" target="_blank" rel="noreferrer" className="transition hover:text-rebar") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:57
+      [a] (href=https://tongducthanhnam.id.vn | attrs=href="https://tongducthanhnam.id.vn" target="_blank" rel="noreferrer" className="transition hover:text-rebar") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:66
+      [a] (href=/Tong_Duc_Thanh_Nam_CV_EN.pdf | attrs=href="/Tong_Duc_Thanh_Nam_CV_EN.pdf" target="_blank" rel="noreferrer" className="border-b border-rebar transition hover:text-reba…) @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:76
+    [visible copy and content literals]
+      "hi" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:14
+      "Let's talk" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:21
+      "product" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:26
+      "Start a conversation" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:33
+      "tongducthanhnam@gmail.com" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:36
+      "Phone" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:48
+      "+84 869 887 363" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:49
+      "Based" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:53
+      "Ho Chi Minh City, Vietnam / UTC +7" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:53
+      "Elsewhere" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:56
+      "GitHub ↗" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:62
+      "Portfolio ↗" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:71
+      "Full profile" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:75
+      "Open CV ↗" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:81
+      "AI products / extensions / automation / full-stack" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:88
+      "Available for thoughtful work" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:89
+  [source] apps/web/src/components/nam-portfolio/sections/ExperienceSection.tsx
+    [component inventory]
+      [ExperienceSection] apps/web/src/components/nam-portfolio/sections/ExperienceSection.tsx:4
+    [semantic hierarchy]
+      [section] (id=experience | attrs=id="experience" className="section-pad bg-bone") @ apps/web/src/components/nam-portfolio/sections/ExperienceSection.tsx:6
+    [visible copy and content literals]
+      "Experience" @ apps/web/src/components/nam-portfolio/sections/ExperienceSection.tsx:9
+  [source] apps/web/src/components/nam-portfolio/sections/HeroSection.tsx
+    [component inventory]
+      [HeroSection] apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:1
+    [semantic hierarchy]
+      [section] (id=hero | attrs=id="hero" className="relative grid min-h-[100dvh] items-center gap-[clamp(42px,7vw,104px)] overflow-hidden px-pad-x pb-[clamp(72p…) @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:3
+      [p] (attrs=className="label-accent mb-[clamp(18px,3dvh,28px)]") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:21
+      [h1] (aria-label=Thanh Nam | attrs=aria-label="Thanh Nam" className="font-serif text-[clamp(5.2rem,14vw,11.5rem)] font-normal leading-[0.84] tracking-[-0.045em]") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:25
+      [p] (attrs=className="mt-[clamp(20px,3dvh,32px)] max-w-[17em] font-serif text-[clamp(1.45rem,3vw,2.9rem)] leading-[1.08] tracking-[-0.025em]") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:34
+      [a] (href=#projects | attrs=href="#projects" className="btn-primary") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:39
+      [a] (href=/Tong_Duc_Thanh_Nam_CV_EN.pdf | attrs=href="/Tong_Duc_Thanh_Nam_CV_EN.pdf" target="_blank" rel="noreferrer" className="btn-ghost") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:42
+      [aside] (attrs=className="relative z-10 self-end border border-line bg-paper shadow-sheet lg:mb-[3dvh]") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:53
+      [p] (attrs=className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-rebar") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:59
+      [p] (attrs=className="max-w-md text-[0.95rem] leading-7 text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:65
+    [visible copy and content literals]
+      "build" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:15
+      "AI Developer Intern / AI Product Builder" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:22
+      "Thanh Nam" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:26
+      "Thanh" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:29
+      "Nam" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:30
+      "I turn vague AI and automation workflows into working products across the full stack." @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:34
+      "See my work" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:39
+      "Read full CV ↗" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:47
+      "Selected signal" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:55
+      "CV / 2026" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:56
+      "Inspectable output" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:59
+      "9 product builds." @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:62
+      "Published extensions, live AI products, deployed demos, and an Android utility—each backed by links or delivery evidence." @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:65
+      "Extensions" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:71
+      "Chrome + Firefox" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:74
+      "Android" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:77
+      "100+ downloads" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:80
+      "English" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:83
+      "Aptis B2" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:86
+      "Ho Chi Minh City" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:91
+      "Full-stack TypeScript" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:92
+  [source] apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx
+    [component inventory]
+      [ProjectsSection] apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:8
+    [semantic hierarchy]
+      [section] (id=projects | attrs=id="projects" className="section-pad bg-bone") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:10
+      [h2] (attrs=className="max-w-[13em] font-serif text-[clamp(3.3rem,7.5vw,7.8rem)] leading-[0.91] tracking-[-0.045em]") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:18
+      [p] (attrs=className="text-[1rem] leading-7 text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:23
+      [p] (attrs=className="mt-5 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-rebar") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:28
+      [article] (attrs=key={project.name} className="group relative overflow-hidden border border-line bg-paper p-[clamp(24px,4vw,54px)] shadow-[0_18px_…) @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:36
+      [p] (attrs=className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-rebar") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:58
+      [a] (attrs=href={project.href} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-3 border-b border-rebar pb-1 fo…) @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:69
+      [h3] (attrs=className="max-w-[11em] font-serif text-[clamp(2.8rem,5.5vw,6rem)] leading-[0.91] tracking-[-0.045em]") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:82
+      [p] (attrs=className="mt-6 max-w-3xl text-[1rem] leading-7 text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:85
+      [p] (attrs=className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-rebar") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:112
+      [h3] (attrs=className="mt-2 font-serif text-[clamp(2.6rem,5vw,5rem)] leading-none tracking-[-0.04em]") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:115
+      [p] (attrs=className="max-w-sm text-sm leading-6 text-ink-soft md:text-right") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:119
+      [details] (attrs=key={project.name} className="group border-b border-line transition-colors open:bg-paper") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:126
+      [summary] (attrs=className="grid cursor-pointer list-none grid-cols-[34px_1fr_28px] items-center gap-3 py-6 transition-[padding,color] duration-30…) @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:130
+      [p] (attrs=className="max-w-xl leading-7 text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:157
+      [a] (attrs=href={project.href} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-3 border-b border-rebar pb-1 fo…) @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:181
+      [p] (attrs=className="mt-6 font-mono text-[0.6rem] uppercase tracking-[0.13em] text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:191
+    [visible copy and content literals]
+      "Selected Work" @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:13
+      "verifiable product" @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:20
+      "Three shipped systems, opened as product case files. The full archive follows with links, technical boundaries, and delivery evidence." @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:23
+      "Inspect the work / verify the output" @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:28
+      "Complete archive" @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:112
+      "Six more product systems" @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:115
+      "Open a row for scope, stack, and delivery evidence." @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:119
+      "No public link / details available in the CV" @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:191
+  [source] apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx
+    [component inventory]
+      [SkillsSection] apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:4
+    [semantic hierarchy]
+      [section] (id=skills | attrs=id="skills" className="section-pad bg-paper") @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:6
+      [h2] (attrs=className="mb-12 max-w-[840px] font-serif text-[clamp(3.3rem,8vw,8rem)] leading-[0.95] tracking-[-0.04em]") @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:8
+      [h3] (attrs=className="font-serif text-[1.3rem] tracking-[-0.01em]") @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:18
+      [p] (attrs=className="mt-3 text-sm leading-6 text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:24
+    [visible copy and content literals]
+      "Skills" @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:7
+      "What I" @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:8
+      "build" @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:9
+      "with" @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:9
+  [source] apps/web/src/components/nam-portfolio/sections/WhySection.tsx
+    [component inventory]
+      [WhySection] apps/web/src/components/nam-portfolio/sections/WhySection.tsx:6
+    [semantic hierarchy]
+      [section] (id=why | attrs=id="why" className="section-pad bg-paper text-ink") @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:38
+      [h2] (attrs=className="section-tag") @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:40
+      [p] (attrs=className="section-tag-right") @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:44
+      [button] (attrs=key={story.step} ref={(button) =) @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:54
+      [p] (attrs=className="mb-5 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-rebar") @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:89
+      [h3] (attrs=className="max-w-[9em] font-serif text-[clamp(3.15rem,7vw,7.2rem)] leading-[0.92] tracking-[-0.04em]") @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:92
+      [p] (attrs=className="mt-8 max-w-2xl text-[1.05rem] leading-8 text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:95
+    [visible copy and content literals]
+      "01" @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:41
+      "Why Nam" @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:41
+      "Product / system / proof" @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:44
+      "Reasons to work with Nam" @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:50
+      "handleKeyDown(event, index)} >" @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:70
+  [source] apps/web/src/components/nam-portfolio/hooks/usePortfolioNavigation.ts
+    [component inventory]
+    [semantic hierarchy]
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/layout/Footer.tsx
+    [component inventory]
+      [Footer] apps/web/src/components/nam-portfolio/layout/Footer.tsx:3
+    [semantic hierarchy]
+      [footer] (attrs=className="bg-ink px-pad-x pb-8 pt-[clamp(56px,8vw,96px)] text-paper") @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:5
+      [p] (attrs=className="font-serif text-[clamp(1.6rem,2.5vw,2.2rem)] tracking-[-0.02em]") @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:8
+      [p] (attrs=className="mt-2 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-[rgba(246,242,233,0.55)]") @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:11
+      [p] (attrs=className="mb-2 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-rebar") @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:30
+      [a] (href=/Tong_Duc_Thanh_Nam_CV_EN.pdf | attrs=href="/Tong_Duc_Thanh_Nam_CV_EN.pdf" className="mt-1 text-[rgba(246,242,233,0.75)] transition hover:text-rebar") @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:42
+    [visible copy and content literals]
+      "Thanh" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:8
+      "Nam" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:9
+      "AI Product Builder / Full-stack TypeScript / HCMC" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:11
+      "Chapters" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:16
+      "Work" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:21
+      "Signal" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:30
+      "SE Graduate / TDTU 2025" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:33
+      "English / Aptis B2" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:36
+      "Vietnamese / Native" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:39
+      "Full CV ↗" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:45
+      "(c) 2026 TONG DUC THANH NAM" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:51
+      "HCMC / VN / UTC+7" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:52
+      "v3.0" @ apps/web/src/components/nam-portfolio/layout/Footer.tsx:53
+  [source] apps/web/src/components/nam-portfolio/layout/Header.tsx
+    [component inventory]
+      [Header] apps/web/src/components/nam-portfolio/layout/Header.tsx:6
+    [semantic hierarchy]
+      [header] (attrs=className={cx( "fixed left-0 top-0 z-40 grid w-full grid-cols-[1fr_auto] items-center gap-7 border-b px-pad-x py-[18px] transitio…) @ apps/web/src/components/nam-portfolio/layout/Header.tsx:22
+      [a] (href=#hero | attrs=ref={brandRef} href="#hero" className={cx( "font-serif text-[clamp(1.35rem,2vw,1.75rem)] tracking-[-0.02em]", menuOpen && "pointe…) @ apps/web/src/components/nam-portfolio/layout/Header.tsx:30
+      [nav] (aria-label=Main menu | attrs=className="hidden justify-self-center gap-[clamp(14px,2vw,28px)] font-mono text-[0.66rem] uppercase tracking-[0.12em] text-ink-so…) @ apps/web/src/components/nam-portfolio/layout/Header.tsx:42
+      [a] (attrs=key={chapter.id} href={`#${chapter.id}`} className={cx( "group relative pb-1 transition hover:text-rebar", activeSection === chap…) @ apps/web/src/components/nam-portfolio/layout/Header.tsx:47
+      [a] (href=#contact | attrs=href="#contact" className="hidden items-center gap-2 rounded-pill border border-current px-5 py-2.5 font-mono text-[0.66rem] uppe…) @ apps/web/src/components/nam-portfolio/layout/Header.tsx:69
+      [button] (id=portfolio-mobile-menu-toggle | type=button | attrs=id="portfolio-mobile-menu-toggle" type="button" className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 min-[1120p…) @ apps/web/src/components/nam-portfolio/layout/Header.tsx:76
+    [visible copy and content literals]
+      "Thanh" @ apps/web/src/components/nam-portfolio/layout/Header.tsx:39
+      "Nam" @ apps/web/src/components/nam-portfolio/layout/Header.tsx:40
+      "Main menu" @ apps/web/src/components/nam-portfolio/layout/Header.tsx:44
+      "Available" @ apps/web/src/components/nam-portfolio/layout/Header.tsx:73
+      "setMenuOpen(!menuOpen)} >" @ apps/web/src/components/nam-portfolio/layout/Header.tsx:83
+  [source] apps/web/src/components/nam-portfolio/layout/MobileMenu.tsx
+    [component inventory]
+      [MobileMenu] apps/web/src/components/nam-portfolio/layout/MobileMenu.tsx:24
+    [semantic hierarchy]
+      [nav] (attrs=ref={menuRef} id={MOBILE_MENU_ID} className={cx( "fixed inset-0 z-30 overflow-y-auto bg-ink text-paper transition-[opacity,visibi…) @ apps/web/src/components/nam-portfolio/layout/MobileMenu.tsx:137
+      [p] (id=portfolio-mobile-menu-title | attrs=id="portfolio-mobile-menu-title" className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-rebar") @ apps/web/src/components/nam-portfolio/layout/MobileMenu.tsx:155
+      [a] (attrs=href={`#${chapter.id}`} className="group flex items-baseline gap-4 py-[clamp(15px,2.5vh,22px)] transition-colors hover:text-rebar…) @ apps/web/src/components/nam-portfolio/layout/MobileMenu.tsx:168
+    [visible copy and content literals]
+      "(null); const restoreFocusRef = useRef" @ apps/web/src/components/nam-portfolio/layout/MobileMenu.tsx:33
+      "Chapters / 01-06" @ apps/web/src/components/nam-portfolio/layout/MobileMenu.tsx:158
+      "setMenuOpen(false)} >" @ apps/web/src/components/nam-portfolio/layout/MobileMenu.tsx:175
+      "Current" @ apps/web/src/components/nam-portfolio/layout/MobileMenu.tsx:184
+      "HCMC / VN" @ apps/web/src/components/nam-portfolio/layout/MobileMenu.tsx:194
+      "UTC +7" @ apps/web/src/components/nam-portfolio/layout/MobileMenu.tsx:195
+  [source] apps/web/src/components/nam-portfolio/common.tsx
+    [component inventory]
+      [SectionHead] apps/web/src/components/nam-portfolio/common.tsx:1
+    [semantic hierarchy]
+      [h2] (attrs=className="section-tag") @ apps/web/src/components/nam-portfolio/common.tsx:12
+      [p] (attrs=className="section-tag-right") @ apps/web/src/components/nam-portfolio/common.tsx:16
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/sections/Kpi.tsx
+    [component inventory]
+      [Kpi] apps/web/src/components/nam-portfolio/sections/Kpi.tsx:1
+    [semantic hierarchy]
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/sections/ContactBlock.tsx
+    [component inventory]
+      [ContactBlock] apps/web/src/components/nam-portfolio/sections/ContactBlock.tsx:3
+    [semantic hierarchy]
+      [p] (attrs=className="mb-1.5 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-[rgba(246,242,233,0.5)]") @ apps/web/src/components/nam-portfolio/sections/ContactBlock.tsx:12
+      [p] (attrs=className="font-serif text-[clamp(1.05rem,1.5vw,1.3rem)] leading-6 tracking-[-0.015em]") @ apps/web/src/components/nam-portfolio/sections/ContactBlock.tsx:15
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx
+    [component inventory]
+      [ExperienceItem] apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx:1
+    [semantic hierarchy]
+      [article] (attrs=className="experience-item group relative grid gap-6 border-t border-line pt-7 transition hover:border-[rgba(184,66,46,0.4)] md:g…) @ apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx:21
+      [h3] (attrs=className="font-serif text-[clamp(1.5rem,2.4vw,2.2rem)] leading-[1.1] tracking-[-0.02em]") @ apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx:31
+      [p] (attrs=className="mt-1 text-[1.05rem] text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx:39
+      [a] (attrs=href={orgHref} target="_blank" rel="noreferrer" className="border-b border-rebar-soft text-rebar hover:border-rebar") @ apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx:41
+    [visible copy and content literals]
+      ") : ( org )}" @ apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx:48
+  [source] apps/web/src/components/nam-portfolio/data.ts
+    [component inventory]
+    [semantic hierarchy]
+    [visible copy and content literals]
+      "Intro" @ apps/web/src/components/nam-portfolio/data.ts:4
+      "Why" @ apps/web/src/components/nam-portfolio/data.ts:5
+      "About" @ apps/web/src/components/nam-portfolio/data.ts:6
+      "Experience" @ apps/web/src/components/nam-portfolio/data.ts:7
+      "Skills" @ apps/web/src/components/nam-portfolio/data.ts:8
+      "Work" @ apps/web/src/components/nam-portfolio/data.ts:9
+      "Contact" @ apps/web/src/components/nam-portfolio/data.ts:10
+      "I ship the thing, not just the pitch." @ apps/web/src/components/nam-portfolio/data.ts:17
+      "I can own the whole product loop." @ apps/web/src/components/nam-portfolio/data.ts:26
+      "The output is public enough to inspect." @ apps/web/src/components/nam-portfolio/data.ts:35
+      "Languages" @ apps/web/src/components/nam-portfolio/data.ts:46
+      "Product work across web, AI workflows, automation, and Android." @ apps/web/src/components/nam-portfolio/data.ts:47
+      "AI applications" @ apps/web/src/components/nam-portfolio/data.ts:53
+      "Context-aware product flows beyond a plain chatbot surface." @ apps/web/src/components/nam-portfolio/data.ts:54
+      "Frontend" @ apps/web/src/components/nam-portfolio/data.ts:64
+      "Stateful interfaces for web products and AI workspaces." @ apps/web/src/components/nam-portfolio/data.ts:65
+      "Backend" @ apps/web/src/components/nam-portfolio/data.ts:77
+      "Typed services, product APIs, and deployment-ready runtimes." @ apps/web/src/components/nam-portfolio/data.ts:78
+      "Browser extensions" @ apps/web/src/components/nam-portfolio/data.ts:83
+      "Local-first browser automation and cross-tab product workflows." @ apps/web/src/components/nam-portfolio/data.ts:84
+      "Data / infrastructure" @ apps/web/src/components/nam-portfolio/data.ts:97
+      "Relational product state, archived content, and edge deployment." @ apps/web/src/components/nam-portfolio/data.ts:98
+      "Automation" @ apps/web/src/components/nam-portfolio/data.ts:110
+      "Operational workflows with permissions and resilient fallbacks." @ apps/web/src/components/nam-portfolio/data.ts:111
+      "Mobile" @ apps/web/src/components/nam-portfolio/data.ts:123
+      "Focused Android utilities for real, repeated user tasks." @ apps/web/src/components/nam-portfolio/data.ts:124
+  [source] apps/web/src/components/nam-portfolio/sections/ProjectBadge.tsx
+    [component inventory]
+      [ProjectBadge] apps/web/src/components/nam-portfolio/sections/ProjectBadge.tsx:4
+    [semantic hierarchy]
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/utils.ts
+    [component inventory]
+    [semantic hierarchy]
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/layout/FooterCol.tsx
+    [component inventory]
+      [FooterCol] apps/web/src/components/nam-portfolio/layout/FooterCol.tsx:1
+    [semantic hierarchy]
+      [p] (attrs=className="mb-2 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-rebar") @ apps/web/src/components/nam-portfolio/layout/FooterCol.tsx:12
+      [a] (attrs=key={item} href={hrefs[index]} target={hrefs[index]?.startsWith("http") ? "_blank" : undefined} rel={hrefs[index]?.startsWith("ht…) @ apps/web/src/components/nam-portfolio/layout/FooterCol.tsx:16
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/types.ts
+    [component inventory]
+    [semantic hierarchy]
+    [visible copy and content literals]

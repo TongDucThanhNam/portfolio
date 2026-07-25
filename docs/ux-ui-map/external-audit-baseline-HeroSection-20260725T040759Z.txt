@@ -1,0 +1,74 @@
+[HeroSection] apps/web/src/components/nam-portfolio/sections/HeroSection.tsx (full route surface)
+  [source] apps/web/src/components/nam-portfolio/sections/HeroSection.tsx
+    [component inventory]
+      [HeroSection] apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:5
+    [semantic hierarchy]
+      [section] (id=hero | attrs=id="hero" className="signal-hero h-[100dvh] min-h-[100dvh]" data-signal-hero) @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:7
+      [p] @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:13
+      [p] (attrs=className="signal-hero-manifesto") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:17
+      [p] (attrs=className="signal-hero-location") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:22
+      [h1] (attrs=className="signal-display-words") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:31
+      [p] @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:45
+      [img] (attrs=src="/images/avatar-cutout.webp" alt="Tong Duc Thanh Nam" width="1024" height="1536" loading="eager" decoding="async" /) @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:60
+      [a] (href=#projects | attrs=href="#projects" className="btn-primary") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:93
+      [a] (href=/Tong_Duc_Thanh_Nam_CV_EN.pdf | attrs=href="/Tong_Duc_Thanh_Nam_CV_EN.pdf" target="_blank" rel="noreferrer" className="btn-ghost") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:101
+    [visible copy and content literals]
+      "Tong Duc Thanh Nam" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:14
+      "AI Product Builder / Full-stack TypeScript" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:15
+      "AI drafts" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:18
+      "Human decides" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:20
+      "Ho Chi Minh City, Vietnam" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:23
+      "Available for thoughtful work" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:25
+      "Tong Duc Thanh Nam — The Human-in-the-Loop for AI Products & Full-stack TypeScript" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:32
+      "HUMAN" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:36
+      "IN THE LOOP" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:39
+      "I design where humans belong in the loop — then build the full-stack products to power it." @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:45
+      "to the loop" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:53
+      "unit: human" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:73
+      "override: enabled" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:78
+      "coffee: 78%" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:81
+      "→ 9 product builds inside" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:99
+      "Open CV" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:106
+      "Browser extensions" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:113
+      "Chrome + Firefox" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:114
+      "Android app" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:117
+      "Published on Google Play" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:118
+      "Core stack" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:121
+      "TypeScript & AI" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:122
+  [source] apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx
+    [component inventory]
+      [HumanLoopPanel] apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:1
+    [semantic hierarchy]
+    [visible copy and content literals]
+      "System status & Human-in-the-Loop HUD" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:5
+      "SYS.01 // METRICS" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:8
+      "LIVE" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:10
+      "SHIPPED BUILDS" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:17
+      "09" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:38
+      "CAPABILITIES" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:45
+      "Product Thinking" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:61
+      "ONLINE" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:65
+      "AI Systems" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:83
+      "Automation" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:102
+      "Full-Stack" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:122
+      "DECISION LAYER" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:135
+      "HUMAN OVERRIDE" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:137
+      "ON" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:139
+      "CONFIDENCE HANDOFF" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:146
+      "AI → HUMAN" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:148
+      "THRESHOLD 82%" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:149
+      "NODE // 02-PROD" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:191
+      "SYSTEM READY ↵" @ apps/web/src/components/nam-portfolio/visuals/HumanLoopPanel.tsx:192
+  [source] apps/web/src/components/nam-portfolio/visuals/PortraitOrbit.tsx
+    [component inventory]
+      [PortraitOrbit] apps/web/src/components/nam-portfolio/visuals/PortraitOrbit.tsx:1
+    [semantic hierarchy]
+    [visible copy and content literals]
+      "HUMAN FIRST · MACHINE FAST · HUMAN FIRST · MACHINE FAST ·" @ apps/web/src/components/nam-portfolio/visuals/PortraitOrbit.tsx:66
+  [source] apps/web/src/components/nam-portfolio/visuals/SystemSignal.tsx
+    [component inventory]
+      [SystemSignal] apps/web/src/components/nam-portfolio/visuals/SystemSignal.tsx:1
+    [semantic hierarchy]
+    [visible copy and content literals]
+      "The Human-in-the-Loop System Path" @ apps/web/src/components/nam-portfolio/visuals/SystemSignal.tsx:10
+      "A continuous routed loop enclosing the portrait, connecting Human to In the Loop." @ apps/web/src/components/nam-portfolio/visuals/SystemSignal.tsx:11

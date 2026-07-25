@@ -1,5 +1,9 @@
 # Tong Duc Thanh Nam — Software Engineer Portfolio
 
+> Historical design and interaction brief. The standalone HTML/CSS/JS prototype was retired after
+> the production React route was migrated to Tailwind CSS v4 utilities. The live implementation is
+> under `apps/web/src/components/nam-portfolio/`.
+
 ## Overview
 
 A single-page AWWWARDS-grade portfolio for **Tong Duc Thanh Nam** (Junior Full-stack TypeScript

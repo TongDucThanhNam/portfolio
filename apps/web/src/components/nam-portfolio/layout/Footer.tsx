@@ -9,21 +9,21 @@ export function Footer() {
 						Thanh<span className="text-rebar"> .</span> Nam
 					</p>
 					<p className="mt-2 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-[rgba(246,242,233,0.55)]">
-						Full-stack TypeScript Engineer / HCMC
+						AI Product Builder / Full-stack TypeScript / HCMC
 					</p>
 				</div>
 				<FooterCol
 					title="Chapters"
-					items={["About", "Experience", "Skills", "Work"]}
-					hrefs={["#about", "#experience", "#skills", "#projects"]}
+					items={["Work", "Why", "About", "Experience", "Skills"]}
+					hrefs={["#projects", "#why", "#about", "#experience", "#skills"]}
 				/>
 				<FooterCol
 					title="Work"
-					items={["Eragear", "GitHub", "Seller Keyboard"]}
+					items={["Web Copilot", "AI Workspace", "Link Saver"]}
 					hrefs={[
-						"https://eragear.app",
-						"https://github.com/TongDucThanhNam",
-						"https://play.google.com/store/apps/details?id=com.terasumi.sellerkeyboard",
+						"https://github.com/TongDucThanhNam/eragear-web-extension",
+						"https://eragear-web-terasumi.terasumi.workers.dev",
+						"https://link-saver-web-terasumi.terasumi.workers.dev",
 					]}
 				/>
 				<div className="flex flex-col gap-2">
@@ -39,12 +39,18 @@ export function Footer() {
 					<span className="text-[rgba(246,242,233,0.75)]">
 						Vietnamese / Native
 					</span>
+					<a
+						href="/Tong_Duc_Thanh_Nam_CV_EN.pdf"
+						className="mt-1 text-[rgba(246,242,233,0.75)] transition hover:text-rebar"
+					>
+						Full CV ↗
+					</a>
 				</div>
 			</div>
 			<div className="mt-12 flex flex-wrap justify-between gap-3 border-t border-[rgba(246,242,233,0.12)] pt-5 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-[rgba(246,242,233,0.5)]">
 				<span>(c) 2026 TONG DUC THANH NAM</span>
 				<span>HCMC / VN / UTC+7</span>
-				<span>v2.0</span>
+				<span>v3.0</span>
 			</div>
 		</footer>
 	);

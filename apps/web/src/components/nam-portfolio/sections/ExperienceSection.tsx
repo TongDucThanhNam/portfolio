@@ -1,10 +1,16 @@
 import { SectionHead } from "../common";
+import { sectionPadClass } from "../styles";
+import { cx } from "../utils";
 import { ExperienceItem } from "./ExperienceItem";
 
 export function ExperienceSection() {
 	return (
-		<section id="experience" className="section-pad bg-bone">
-			<SectionHead num="03" title="Experience" detail="Selected roles" />
+		<section id="experience" className={cx(sectionPadClass, "bg-bone")}>
+			<SectionHead
+				num="04"
+				title="Experience"
+				detail="Professional + education"
+			/>
 			<div className="flex flex-col gap-[clamp(32px,5vw,64px)]">
 				<ExperienceItem
 					period="05/2024 - 07/2024"
@@ -18,24 +24,16 @@ export function ExperienceSection() {
 					stack={["Node.js", "Express.js"]}
 				/>
 				<ExperienceItem
-					period="03/2025 - Present"
-					location="Personal product / live"
-					jobTitle="Full-stack Developer"
-					note="Eragear"
-					org="AI-native workspace / eragear.app"
-					orgHref="https://eragear.app"
+					period="09/2020 - 04/2025"
+					location="Ho Chi Minh City"
+					jobTitle="Software Engineering"
+					note="Education"
+					org="Ton Duc Thang University"
 					points={[
-						"Building an AI workspace for long-running conversations, in-context artifacts, research workflows, and agent-powered productivity.",
-						"Implemented selectable model/tool/search controls, streaming responses, usage metadata, persistence, and credit-accounting architecture.",
-						"Connected the web workspace with browser-assisted research, local knowledge workflows, and agent integrations.",
+						"Completed Software Engineering studies while building web, AI, browser-extension, automation, and Android product projects.",
+						"English proficiency: Aptis B2.",
 					]}
-					stack={[
-						"TanStack / React",
-						"Hono",
-						"CF Workers / D1",
-						"Drizzle",
-						"AI SDK",
-					]}
+					stack={["Software Engineering", "TDTU", "Aptis B2"]}
 				/>
 			</div>
 		</section>

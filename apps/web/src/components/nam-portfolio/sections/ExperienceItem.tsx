@@ -1,3 +1,5 @@
+import { chipClass } from "../styles";
+
 export function ExperienceItem({
 	period,
 	location,
@@ -18,7 +20,10 @@ export function ExperienceItem({
 	stack: string[];
 }) {
 	return (
-		<article className="experience-item group relative grid gap-6 border-t border-line pt-7 transition hover:border-[rgba(184,66,46,0.4)] md:grid-cols-[220px_1fr] md:hover:pl-4">
+		<article
+			className="group relative grid gap-6 border-t border-line pt-7 transition hover:border-[rgba(184,66,46,0.4)] md:grid-cols-[220px_1fr] md:hover:pl-4"
+			data-reveal="rise"
+		>
 			<span
 				className="absolute left-0 top-7 h-[calc(100%-28px)] w-px origin-top scale-y-0 bg-rebar transition group-hover:scale-y-100"
 				aria-hidden="true"
@@ -63,7 +68,7 @@ export function ExperienceItem({
 				</ul>
 				<div className="mt-5 flex flex-wrap gap-1.5">
 					{stack.map((item) => (
-						<span key={item} className="chip">
+						<span key={item} className={chipClass}>
 							{item}
 						</span>
 					))}

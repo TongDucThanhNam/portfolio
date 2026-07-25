@@ -1,3 +1,11 @@
+import {
+	sectionHeadClass,
+	sectionTagClass,
+	sectionTagNumberClass,
+	sectionTagRightClass,
+} from "./styles";
+import { cx } from "./utils";
+
 export function SectionHead({
 	num,
 	title,
@@ -8,12 +16,12 @@ export function SectionHead({
 	detail: string;
 }) {
 	return (
-		<div className="section-head">
-			<h2 className="section-tag">
-				<span className="section-tag-num">{num}</span>
+		<div className={sectionHeadClass} data-reveal="line">
+			<h2 className={sectionTagClass}>
+				<span className={sectionTagNumberClass}>{num}</span>
 				{title}
 			</h2>
-			<p className="section-tag-right">{detail}</p>
+			<p className={cx(sectionTagClass, sectionTagRightClass)}>{detail}</p>
 		</div>
 	);
 }

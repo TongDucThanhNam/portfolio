@@ -7,8 +7,11 @@ export function ProjectBadge({ project }: { project: Project }) {
 			className={cx(
 				"inline-flex rounded-pill border px-2.5 py-1 font-mono text-[0.62rem] uppercase tracking-[0.1em]",
 				project.statusTone === "live" && "border-rebar text-rebar",
-				project.statusTone === "oss" && "border-steel text-steel",
 				project.statusTone === "published" && "border-ink text-ink",
+				(project.statusTone === "private" ||
+					project.statusTone === "progress") &&
+					"border-steel text-steel",
+				project.statusTone === "prototype" && "border-muted text-ink-soft",
 			)}
 		>
 			{project.statusTone === "live" && (

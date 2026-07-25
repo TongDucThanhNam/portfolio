@@ -1,0 +1,245 @@
+[NamPortfolio] apps/web/src/components/nam-portfolio/NamPortfolio.tsx (full route surface)
+  [source] apps/web/src/components/nam-portfolio/NamPortfolio.tsx
+    [component inventory]
+      [NamPortfolio] apps/web/src/components/nam-portfolio/NamPortfolio.tsx:14
+    [semantic hierarchy]
+      [a] (href=#portfolio-main | attrs=className="skip-link" href="#portfolio-main") @ apps/web/src/components/nam-portfolio/NamPortfolio.tsx:29
+      [main] (id=portfolio-main | attrs=id="portfolio-main" tabIndex={-1}) @ apps/web/src/components/nam-portfolio/NamPortfolio.tsx:51
+    [visible copy and content literals]
+      "Skip to content" @ apps/web/src/components/nam-portfolio/NamPortfolio.tsx:29
+  [source] apps/web/src/components/nam-portfolio/sections/AboutSection.tsx
+    [component inventory]
+      [AboutSection] apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:5
+    [semantic hierarchy]
+      [section] (id=about | attrs=id="about" className="section-pad bg-paper") @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:7
+      [aside] (attrs=className="reveal self-start border border-line bg-bone p-7" data-clip-reveal) @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:27
+      [p] (attrs=className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:31
+      [p] (attrs=className="text-sm leading-6 text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:61
+    [visible copy and content literals]
+      "About" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:8
+      "Building software" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:10
+      "Live AI product" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:11
+      "Open-source repos" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:12
+      "Published Android app" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:13
+      "TypeScript" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:21
+      "the whole loop" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:23
+      "durable state" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:25
+      "Quick facts" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:31
+      "Based" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:36
+      "Ho Chi Minh City, Vietnam" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:38
+      "Education" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:42
+      "Software Engineering, Ton Duc Thang University (2020-2025)" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:44
+      "Languages" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:48
+      "Vietnamese (native) / English (Aptis B2)" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:50
+      "Status" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:54
+      "Open to opportunities" @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:56
+      "I have shipped a live AI workspace, a branching chat UI, a desktop coding copilot, and a published Android keyboard." @ apps/web/src/components/nam-portfolio/sections/AboutSection.tsx:61
+  [source] apps/web/src/components/nam-portfolio/sections/ContactSection.tsx
+    [component inventory]
+      [ContactSection] apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:7
+    [semantic hierarchy]
+      [section] (id=contact | attrs=id="contact" className="relative overflow-hidden bg-ink text-paper") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:27
+      [p] (attrs=className="label-accent reveal !text-paper") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:41
+      [a] (href=mailto:tongducthanhnam@gmail.com | attrs=href="mailto:tongducthanhnam@gmail.com" className="border-b border-rebar text-paper transition hover:text-rebar-soft") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:59
+      [a] (href=https://github.com/TongDucThanhNam | attrs=href="https://github.com/TongDucThanhNam" target="_blank" rel="noreferrer" className="hover:text-rebar") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:71
+      [a] (href=https://tongducthanhnam.id.vn | attrs=href="https://tongducthanhnam.id.vn" target="_blank" rel="noreferrer" className="hover:text-rebar") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:80
+      [form] (attrs=className="reveal" noValidate onSubmit={onSubmit}) @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:90
+      [p] (attrs=className="mb-5 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-rebar") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:91
+      [input] (id=cf-name | type=text | attrs=type="text" name="name" id="cf-name" required placeholder=" " /) @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:95
+      [input] (id=cf-email | type=email | attrs=type="email" name="email" id="cf-email" required placeholder=" " /) @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:105
+      [textarea] (id=cf-msg | attrs=name="message" id="cf-msg" rows={3} placeholder=" " /) @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:115
+      [button] (type=submit | attrs=type="submit" className="btn-primary mt-3 w-full bg-rebar hover:bg-paper hover:text-ink" data-cursor-label="SEND") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:118
+      [p] (attrs=className="mt-4 min-h-4 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-[rgba(246,242,233,0.6)]" aria-live="polite") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:125
+      [a] (href=mailto:tongducthanhnam@gmail.com | attrs=href="mailto:tongducthanhnam@gmail.com" className="contact-orb magnetic-target relative grid h-[clamp(138px,18vw,220px)] w-[clamp…) @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:134
+      [p] (attrs=className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-[rgba(246,242,233,0.5)]") @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:173
+    [visible copy and content literals]
+      "hi" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:36
+      "Let's talk" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:42
+      "Building something?" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:51
+      "Let's" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:53
+      "talk" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:54
+      "Email" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:58
+      "tongducthanhnam@gmail.com" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:62
+      "Phone" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:66
+      "0869 887 363" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:66
+      "Based" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:67
+      "Ho Chi Minh City, Vietnam / UTC +7" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:67
+      "Elsewhere" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:70
+      "GitHub" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:76
+      "tongducthanhnam.id.vn" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:85
+      "Send a message" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:91
+      "Your name" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:102
+      "Your email" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:112
+      "Message" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:116
+      "SEND" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:121
+      "Send Message" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:122
+      "EMAIL" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:137
+      "Available for thoughtful work - HCMC / UTC+7 -" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:161
+      "Get" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:168
+      "In touch" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:169
+      "I read every message" @ apps/web/src/components/nam-portfolio/sections/ContactSection.tsx:173
+  [source] apps/web/src/components/nam-portfolio/sections/ExperienceSection.tsx
+    [component inventory]
+      [ExperienceSection] apps/web/src/components/nam-portfolio/sections/ExperienceSection.tsx:4
+    [semantic hierarchy]
+      [section] (id=experience | attrs=id="experience" className="section-pad bg-bone") @ apps/web/src/components/nam-portfolio/sections/ExperienceSection.tsx:6
+    [visible copy and content literals]
+      "Experience" @ apps/web/src/components/nam-portfolio/sections/ExperienceSection.tsx:7
+  [source] apps/web/src/components/nam-portfolio/sections/HeroSection.tsx
+    [component inventory]
+      [HeroSection] apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:3
+    [semantic hierarchy]
+      [section] (id=hero | attrs=id="hero" className="relative flex min-h-[100dvh] overflow-hidden px-pad-x pb-[clamp(48px,8dvh,76px)] pt-[clamp(96px,13dvh,132px)…) @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:5
+      [p] (attrs=className="hero-intro label-accent mb-[clamp(18px,3dvh,28px)]") @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:33
+      [h1] (attrs=className="font-serif text-[clamp(5.3rem,17vw,12rem)] font-normal leading-[0.86] tracking-[-0.04em]" data-cursor-spotlight) @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:37
+      [p] (attrs=className="hero-intro mt-[clamp(18px,3dvh,30px)] max-w-[16em] font-serif text-[clamp(1.45rem,3.4vw,3.1rem)] leading-[1.06] tracki…) @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:50
+      [a] (href=#projects | attrs=href="#projects" className="btn-primary magnetic-target" data-cursor-label="WORK" data-cursor-stick data-magnetic) @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:55
+      [a] (href=#contact | attrs=href="#contact" className="btn-ghost magnetic-target" data-cursor-label="REACH" data-magnetic) @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:64
+    [visible copy and content literals]
+      "eragear" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:17
+      "AI / WEB / EDGE" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:22
+      "HO CHI MINH CITY" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:25
+      "UTC +7" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:28
+      "Full-stack TypeScript / AI application engineering" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:34
+      "Thanh" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:42
+      "Nam" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:46
+      "The engineer to call when an AI idea needs to become a product people actually use." @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:50
+      "WORK" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:58
+      "See my work" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:62
+      "REACH" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:67
+      "Get in touch" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:70
+      "Scroll" @ apps/web/src/components/nam-portfolio/sections/HeroSection.tsx:81
+  [source] apps/web/src/components/nam-portfolio/sections/Marquee.tsx
+    [component inventory]
+      [Marquee] apps/web/src/components/nam-portfolio/sections/Marquee.tsx:1
+    [semantic hierarchy]
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx
+    [component inventory]
+      [ProjectsSection] apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:16
+    [semantic hierarchy]
+      [section] (id=projects | attrs=id="projects" className="section-pad bg-bone") @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:161
+      [a] (attrs=key={project.name} href={project.href} target="_blank" rel="noreferrer" className="project-row group grid grid-cols-[42px_1fr_44p…) @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:168
+    [visible copy and content literals]
+      "(null); const canPreviewRef = useRef(false); const pointerXRef = useRef(0); const previewX = useRef" @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:20
+      "void) | null>(null); const previewY = useRef" @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:23
+      "void) | null>(null); const previewRotate = useRef" @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:24
+      "Selected Work" @ apps/web/src/components/nam-portfolio/sections/ProjectsSection.tsx:162
+  [source] apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx
+    [component inventory]
+      [SkillsSection] apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:6
+    [semantic hierarchy]
+      [section] (id=skills | attrs=id="skills" className="section-pad bg-paper") @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:8
+      [h3] (attrs=className="mb-5 font-serif text-[1.3rem] tracking-[-0.01em]") @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:26
+    [visible copy and content literals]
+      "Skills" @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:9
+      "What I" @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:16
+      "build" @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:17
+      "with" @ apps/web/src/components/nam-portfolio/sections/SkillsSection.tsx:17
+  [source] apps/web/src/components/nam-portfolio/sections/WhySection.tsx
+    [component inventory]
+      [WhySection] apps/web/src/components/nam-portfolio/sections/WhySection.tsx:4
+    [semantic hierarchy]
+      [section] (id=why | attrs=id="why" className="min-h-[300vh] bg-paper text-ink") @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:6
+      [p] @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:27
+      [p] (attrs=className="mb-5 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-rebar") @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:32
+      [h2] (attrs=className="font-serif text-[clamp(3.2rem,9vw,7.8rem)] leading-[0.92] tracking-[-0.04em]") @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:35
+      [p] (attrs=className="mt-8 max-w-2xl text-lg leading-8 text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:38
+    [visible copy and content literals]
+      "why" @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:12
+      "Why choose Nam" @ apps/web/src/components/nam-portfolio/sections/WhySection.tsx:27
+  [source] apps/web/src/components/nam-portfolio/common.tsx
+    [component inventory]
+      [SectionHead] apps/web/src/components/nam-portfolio/common.tsx:3
+    [semantic hierarchy]
+      [p] (attrs=className="section-tag-right") @ apps/web/src/components/nam-portfolio/common.tsx:18
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/motion/RevealText.tsx
+    [component inventory]
+      [BlockReveal] apps/web/src/components/nam-portfolio/motion/RevealText.tsx:39
+      [CharSlide] apps/web/src/components/nam-portfolio/motion/RevealText.tsx:145
+      [ScrubChars] apps/web/src/components/nam-portfolio/motion/RevealText.tsx:265
+    [semantic hierarchy]
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/sections/Kpi.tsx
+    [component inventory]
+      [Kpi] apps/web/src/components/nam-portfolio/sections/Kpi.tsx:1
+    [semantic hierarchy]
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/sections/ContactBlock.tsx
+    [component inventory]
+      [ContactBlock] apps/web/src/components/nam-portfolio/sections/ContactBlock.tsx:3
+    [semantic hierarchy]
+      [p] (attrs=className="mb-1.5 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-[rgba(246,242,233,0.5)]") @ apps/web/src/components/nam-portfolio/sections/ContactBlock.tsx:12
+      [p] (attrs=className="font-serif text-[clamp(1.05rem,1.5vw,1.3rem)] leading-6 tracking-[-0.015em]") @ apps/web/src/components/nam-portfolio/sections/ContactBlock.tsx:15
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx
+    [component inventory]
+      [ExperienceItem] apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx:1
+    [semantic hierarchy]
+      [article] (attrs=className="experience-item group relative grid gap-6 border-t border-line pt-7 transition hover:border-[rgba(184,66,46,0.4)] md:g…) @ apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx:21
+      [h3] (attrs=className="font-serif text-[clamp(1.5rem,2.4vw,2.2rem)] leading-[1.1] tracking-[-0.02em]") @ apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx:31
+      [p] (attrs=className="mt-1 text-[1.05rem] text-ink-soft") @ apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx:39
+      [a] (attrs=href={orgHref} target="_blank" rel="noreferrer" className="border-b border-rebar-soft text-rebar hover:border-rebar") @ apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx:41
+    [visible copy and content literals]
+      ") : ( org )}" @ apps/web/src/components/nam-portfolio/sections/ExperienceItem.tsx:48
+  [source] apps/web/src/components/nam-portfolio/visuals/Workstation.tsx
+    [component inventory]
+      [WorkstationComponent] apps/web/src/components/nam-portfolio/visuals/Workstation.tsx:8
+    [semantic hierarchy]
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/sections/GridFormation.tsx
+    [component inventory]
+      [GridFormation] apps/web/src/components/nam-portfolio/sections/GridFormation.tsx:30
+    [semantic hierarchy]
+      [a] (attrs=key={project.name} href={project.href} target="_blank" rel="noreferrer" className="formation-card group relative flex aspect-[3/5…) @ apps/web/src/components/nam-portfolio/sections/GridFormation.tsx:134
+      [p] (attrs=className="font-mono text-[0.56rem] uppercase tracking-[0.12em] text-muted") @ apps/web/src/components/nam-portfolio/sections/GridFormation.tsx:146
+      [h3] (attrs=className="mt-1 font-serif text-[clamp(0.95rem,1.4vw,1.2rem)] leading-tight tracking-[-0.02em] text-ink") @ apps/web/src/components/nam-portfolio/sections/GridFormation.tsx:150
+    [visible copy and content literals]
+      "(null); const stageRef = useRef" @ apps/web/src/components/nam-portfolio/sections/GridFormation.tsx:31
+      "(\".formation-card\", grid); const labels = gsap.utils.toArray" @ apps/web/src/components/nam-portfolio/sections/GridFormation.tsx:44
+      "tween.kill(); }, ); return () => media.revert(); }, []); return (" @ apps/web/src/components/nam-portfolio/sections/GridFormation.tsx:120
+  [source] apps/web/src/components/nam-portfolio/sections/ProjectBadge.tsx
+    [component inventory]
+      [ProjectBadge] apps/web/src/components/nam-portfolio/sections/ProjectBadge.tsx:4
+    [semantic hierarchy]
+    [visible copy and content literals]
+  [source] apps/web/src/components/nam-portfolio/sections/ProjectPreview.tsx
+    [component inventory]
+      [ProjectPreview] apps/web/src/components/nam-portfolio/sections/ProjectPreview.tsx:1
+    [semantic hierarchy]
+    [visible copy and content literals]
+      "Branching chat project schematic" @ apps/web/src/components/nam-portfolio/sections/ProjectPreview.tsx:11
+      "Desktop copilot project schematic" @ apps/web/src/components/nam-portfolio/sections/ProjectPreview.tsx:37
+      "Mobile keyboard project schematic" @ apps/web/src/components/nam-portfolio/sections/ProjectPreview.tsx:56
+      "); } return (" @ apps/web/src/components/nam-portfolio/sections/ProjectPreview.tsx:64
+      "AI workspace project schematic" @ apps/web/src/components/nam-portfolio/sections/ProjectPreview.tsx:76
+  [source] apps/web/src/components/nam-portfolio/visuals/TypingKeyboard.tsx
+    [component inventory]
+      [TypingKeyboardComponent] apps/web/src/components/nam-portfolio/visuals/TypingKeyboard.tsx:48
+    [semantic hierarchy]
+    [visible copy and content literals]
+      "(null); const typingIndexRef = useRef(0); const typingPhaseRef = useRef" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboard.tsx:58
+      "(\"initial\"); const prefersReducedMotion = useMediaQuery(REDUCED_MOTION_QUERY); const hasCoarsePointer = useMediaQuery(COARSE_POINTER_QUERY); const isDesktopViewport = useMediaQuer…" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboard.tsx:60
+  [source] apps/web/src/components/nam-portfolio/visuals/TypingKeyboardKey.tsx
+    [component inventory]
+      [TypingKeyboardKeyComponent] apps/web/src/components/nam-portfolio/visuals/TypingKeyboardKey.tsx:24
+    [semantic hierarchy]
+    [visible copy and content literals]
+      ") : null}" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboardKey.tsx:43
+  [source] apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx
+    [component inventory]
+      [TypingKeyboardScreenComponent] apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx:7
+    [semantic hierarchy]
+      [p] (attrs=className="tk-screen__terminal-copy") @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx:23
+    [visible copy and content literals]
+      "AI match engine" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx:15
+      "Live / 01" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx:17
+      "Evidence stream" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx:22
+      "Fit score" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx:33
+      "94" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx:34
+      "Product" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx:39
+      "System" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx:43
+      "Proof" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx:47
+      "TS / AI / Edge" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx:55
+      "Verified output" @ apps/web/src/components/nam-portfolio/visuals/TypingKeyboardScreen.tsx:57
