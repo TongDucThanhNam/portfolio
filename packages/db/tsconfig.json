@@ -1,4 +1,4 @@
 {
-  "extends": "@tanstack-start-portfolio/config/tsconfig.base.json",
-  "include": ["src", "drizzle.config.ts"]
+	"extends": "@tanstack-start-portfolio/config/tsconfig.base.json",
+	"include": ["src", "drizzle.config.ts"]
 }

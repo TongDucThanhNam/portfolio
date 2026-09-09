@@ -1,0 +1,4 @@
+interface:
+  display_name: "Awwwards Vault"
+  short_description: "Pull awwwards mechanisms from the lab parts bin into any project"
+  default_prompt: "Use $awwwards-vault to find and adapt an awwwards mechanism from the lab parts bin into this project: shortlist via the vault CLI, read the package GUIDE, re-theme to this project's tokens, and verify."

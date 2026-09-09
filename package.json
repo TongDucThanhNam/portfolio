@@ -17,6 +17,7 @@
 		"check-types": "turbo run check-types",
 		"lint": "turbo run lint",
 		"check:tailwind-only": "node scripts/check-tailwind-only.mjs",
+		"generate:ascii-portrait": "node scripts/generate-ascii-portrait.mjs",
 		"db:generate": "turbo run db:generate -F @tanstack-start-portfolio/db",
 		"deploy": "turbo run deploy -F @tanstack-start-portfolio/infra",
 		"destroy": "turbo run destroy -F @tanstack-start-portfolio/infra",
@@ -40,6 +41,7 @@
 		"@cloudflare/workers-types": "^4.20260621.1",
 		"@types/node": "^22.13.14",
 		"drizzle-orm": "^0.45.2",
+		"sharp": "^0.34.5",
 		"turbo": "2.9.16",
 		"typescript": "^6.0.3"
 	},

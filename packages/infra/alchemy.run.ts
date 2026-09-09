@@ -1,5 +1,5 @@
 import alchemy from "alchemy";
-import { D1Database, TanStackStart } from "alchemy/cloudflare";
+import { D1Database, Route, TanStackStart } from "alchemy/cloudflare";
 import { config } from "dotenv";
 
 config({ path: "./.env" });
@@ -17,6 +17,12 @@ export const web = await TanStackStart("web", {
 	bindings: {
 		DB: db,
 	},
+});
+
+await Route("portfolio-domain-route", {
+	pattern: "tongducthanhnam.id.vn/*",
+	script: web,
+	adopt: true,
 });
 
 console.log(`Web -> ${web.url}`);

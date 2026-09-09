@@ -20,6 +20,18 @@ export function usePortfolioMotionDirector(rootRef: RefObject<HTMLElement>) {
 		const tiltTargets = Array.from(
 			root.querySelectorAll<HTMLElement>("[data-tilt]"),
 		);
+		const magneticTargets = Array.from(
+			root.querySelectorAll<HTMLElement>("[data-magnetic]"),
+		);
+		const scrollEchoTargets = Array.from(
+			root.querySelectorAll<HTMLElement>("[data-scroll-echo]"),
+		);
+		const wordRevealTargets = Array.from(
+			root.querySelectorAll<HTMLElement>("[data-word-reveal]"),
+		);
+		const spotlightTargets = Array.from(
+			root.querySelectorAll<HTMLElement>("[data-spotlight-grid]"),
+		);
 		const signalHero = root.querySelector<HTMLElement>("[data-signal-hero]");
 		const signalPaths = Array.from(
 			root.querySelectorAll<SVGPathElement>("[data-signal-bend]"),
@@ -72,9 +84,154 @@ export function usePortfolioMotionDirector(rootRef: RefObject<HTMLElement>) {
 
 		const finePointer = window.matchMedia("(pointer: fine)").matches;
 		const tiltCleanups: Array<() => void> = [];
+		const magneticCleanups: Array<() => void> = [];
+		const spotlightCleanups: Array<() => void> = [];
 		const signalCleanups: Array<() => void> = [];
+		const scrollCleanups: Array<() => void> = [];
+
+		if (!reducedMotion && wordRevealTargets.length > 0) {
+			let wordFrame = 0;
+
+			const paintWords = () => {
+				wordFrame = 0;
+				const viewportHeight = window.innerHeight;
+
+				for (const target of wordRevealTargets) {
+					const bounds = target.getBoundingClientRect();
+					const travel = Math.max(viewportHeight * 0.5, bounds.height * 0.8);
+					const progress = Math.min(
+						1,
+						Math.max(0, (viewportHeight * 0.82 - bounds.top) / travel),
+					);
+					const words = Array.from(
+						target.querySelectorAll<HTMLElement>("[data-word]"),
+					);
+					const denominator = Math.max(1, words.length - 1);
+
+					for (const [index, word] of words.entries()) {
+						const stagger = (index / denominator) * 0.38;
+						const localProgress = Math.min(
+							1,
+							Math.max(0, (progress - stagger) / 0.62),
+						);
+						const eased = 1 - (1 - localProgress) ** 3;
+						word.style.opacity = (0.14 + eased * 0.86).toFixed(3);
+						word.style.transform = `translate3d(0, ${(1 - eased) * 18}px, 0)`;
+					}
+				}
+			};
+
+			const requestWordPaint = () => {
+				if (!wordFrame) {
+					wordFrame = window.requestAnimationFrame(paintWords);
+				}
+			};
+
+			paintWords();
+			window.addEventListener("scroll", requestWordPaint, { passive: true });
+			window.addEventListener("resize", requestWordPaint);
+			scrollCleanups.push(() => {
+				window.removeEventListener("scroll", requestWordPaint);
+				window.removeEventListener("resize", requestWordPaint);
+				if (wordFrame) window.cancelAnimationFrame(wordFrame);
+				for (const target of wordRevealTargets) {
+					for (const word of target.querySelectorAll<HTMLElement>(
+						"[data-word]",
+					)) {
+						word.style.removeProperty("opacity");
+						word.style.removeProperty("transform");
+					}
+				}
+			});
+		}
+
+		if (!reducedMotion && scrollEchoTargets.length > 0) {
+			let echoFrame = 0;
+
+			const paintEchoes = () => {
+				echoFrame = 0;
+				const viewportHeight = window.innerHeight;
+
+				for (const target of scrollEchoTargets) {
+					const bounds = target.getBoundingClientRect();
+					const progress = Math.min(
+						1,
+						Math.max(
+							0,
+							(viewportHeight - bounds.top) / (viewportHeight + bounds.height),
+						),
+					);
+					const near = progress * 46;
+					const far = near * 2;
+					target.style.setProperty("--echo-n2", `${-far}px`);
+					target.style.setProperty("--echo-n1", `${-near}px`);
+					target.style.setProperty("--echo-p1", `${near}px`);
+					target.style.setProperty("--echo-p2", `${far}px`);
+				}
+			};
+
+			const requestEchoPaint = () => {
+				if (!echoFrame) {
+					echoFrame = window.requestAnimationFrame(paintEchoes);
+				}
+			};
+
+			paintEchoes();
+			window.addEventListener("scroll", requestEchoPaint, { passive: true });
+			window.addEventListener("resize", requestEchoPaint);
+			scrollCleanups.push(() => {
+				window.removeEventListener("scroll", requestEchoPaint);
+				window.removeEventListener("resize", requestEchoPaint);
+				if (echoFrame) window.cancelAnimationFrame(echoFrame);
+				for (const target of scrollEchoTargets) {
+					target.style.removeProperty("--echo-n2");
+					target.style.removeProperty("--echo-n1");
+					target.style.removeProperty("--echo-p1");
+					target.style.removeProperty("--echo-p2");
+				}
+			});
+		}
 
 		if (!reducedMotion && finePointer) {
+			for (const target of spotlightTargets) {
+				let spotlightFrame = 0;
+				let pointerX = 0;
+				let pointerY = 0;
+
+				const paintSpotlight = () => {
+					spotlightFrame = 0;
+					const rect = target.getBoundingClientRect();
+					target.style.setProperty(
+						"--spotlight-x",
+						`${pointerX - rect.left}px`,
+					);
+					target.style.setProperty("--spotlight-y", `${pointerY - rect.top}px`);
+				};
+
+				const handleSpotlightMove = (event: PointerEvent) => {
+					pointerX = event.clientX;
+					pointerY = event.clientY;
+					if (!spotlightFrame) {
+						spotlightFrame = window.requestAnimationFrame(paintSpotlight);
+					}
+				};
+
+				const resetSpotlight = () => {
+					target.style.setProperty("--spotlight-x", "50%");
+					target.style.setProperty("--spotlight-y", "50%");
+				};
+
+				target.addEventListener("pointermove", handleSpotlightMove);
+				target.addEventListener("pointerleave", resetSpotlight);
+				spotlightCleanups.push(() => {
+					target.removeEventListener("pointermove", handleSpotlightMove);
+					target.removeEventListener("pointerleave", resetSpotlight);
+					if (spotlightFrame) window.cancelAnimationFrame(spotlightFrame);
+					target.style.removeProperty("--spotlight-x");
+					target.style.removeProperty("--spotlight-y");
+				});
+			}
+
 			for (const target of tiltTargets) {
 				let pointerFrame = 0;
 				let pointerX = 0;
@@ -122,7 +279,69 @@ export function usePortfolioMotionDirector(rootRef: RefObject<HTMLElement>) {
 				});
 			}
 
-			if (signalHero && signalPaths.length > 0) {
+			for (const target of magneticTargets) {
+				let magneticFrame = 0;
+				let currentX = 0;
+				let currentY = 0;
+				let targetX = 0;
+				let targetY = 0;
+
+				const paintMagnetic = () => {
+					currentX += (targetX - currentX) * 0.18;
+					currentY += (targetY - currentY) * 0.18;
+					target.style.setProperty("--magnetic-x", `${currentX.toFixed(2)}px`);
+					target.style.setProperty("--magnetic-y", `${currentY.toFixed(2)}px`);
+
+					if (
+						Math.abs(targetX - currentX) < 0.02 &&
+						Math.abs(targetY - currentY) < 0.02
+					) {
+						currentX = targetX;
+						currentY = targetY;
+						target.style.setProperty("--magnetic-x", `${currentX}px`);
+						target.style.setProperty("--magnetic-y", `${currentY}px`);
+						magneticFrame = 0;
+						return;
+					}
+
+					magneticFrame = window.requestAnimationFrame(paintMagnetic);
+				};
+
+				const requestMagneticPaint = () => {
+					if (!magneticFrame) {
+						magneticFrame = window.requestAnimationFrame(paintMagnetic);
+					}
+				};
+
+				const handleMagneticMove = (event: PointerEvent) => {
+					const rect = target.getBoundingClientRect();
+					const offsetX = event.clientX - (rect.left + rect.width / 2);
+					const offsetY = event.clientY - (rect.top + rect.height / 2);
+					targetX = Math.max(-9, Math.min(9, offsetX * 0.16));
+					targetY = Math.max(-7, Math.min(7, offsetY * 0.18));
+					requestMagneticPaint();
+				};
+
+				const resetMagnetic = () => {
+					targetX = 0;
+					targetY = 0;
+					requestMagneticPaint();
+				};
+
+				target.addEventListener("pointermove", handleMagneticMove);
+				target.addEventListener("pointerleave", resetMagnetic);
+				target.addEventListener("blur", resetMagnetic);
+				magneticCleanups.push(() => {
+					target.removeEventListener("pointermove", handleMagneticMove);
+					target.removeEventListener("pointerleave", resetMagnetic);
+					target.removeEventListener("blur", resetMagnetic);
+					if (magneticFrame) window.cancelAnimationFrame(magneticFrame);
+					target.style.removeProperty("--magnetic-x");
+					target.style.removeProperty("--magnetic-y");
+				});
+			}
+
+			if (signalHero) {
 				let signalFrame = 0;
 				let pointerX = 0;
 				let pointerY = 0;
@@ -175,38 +394,23 @@ export function usePortfolioMotionDirector(rootRef: RefObject<HTMLElement>) {
 			}
 		}
 
-		let scrollFrame = 0;
-		const paintScroll = () => {
-			scrollFrame = 0;
-			if (!signalHero) return;
-			const rect = signalHero.getBoundingClientRect();
-			const exitProgress = Math.min(
-				1,
-				Math.max(0, -rect.top / Math.max(1, window.innerHeight)),
-			);
-			root.style.setProperty("--hero-exit", exitProgress.toFixed(4));
-		};
-		const requestScrollPaint = () => {
-			if (!scrollFrame) {
-				scrollFrame = window.requestAnimationFrame(paintScroll);
-			}
-		};
-
-		paintScroll();
-		window.addEventListener("scroll", requestScrollPaint, { passive: true });
-		window.addEventListener("resize", requestScrollPaint);
-
 		return () => {
 			revealObserver?.disconnect();
 			window.cancelAnimationFrame(entranceFrame);
 			window.cancelAnimationFrame(readyFrame);
-			window.cancelAnimationFrame(scrollFrame);
-			window.removeEventListener("scroll", requestScrollPaint);
-			window.removeEventListener("resize", requestScrollPaint);
 			for (const cleanup of tiltCleanups) {
 				cleanup();
 			}
+			for (const cleanup of magneticCleanups) {
+				cleanup();
+			}
+			for (const cleanup of spotlightCleanups) {
+				cleanup();
+			}
 			for (const cleanup of signalCleanups) {
+				cleanup();
+			}
+			for (const cleanup of scrollCleanups) {
 				cleanup();
 			}
 			delete root.dataset.motion;

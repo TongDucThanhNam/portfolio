@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 
 import { usePortfolioMotionDirector, usePortfolioNavigation } from "./hooks";
-import { Footer } from "./layout";
+import { ChapterNav, Footer } from "./layout";
 import { AboutSection } from "./sections/AboutSection";
 import { CapabilityRibbon } from "./sections/CapabilityRibbon";
 import { ContactSection } from "./sections/ContactSection";
@@ -14,7 +14,7 @@ import { WhySection } from "./sections/WhySection";
 export default function NamPortfolio() {
 	const shellRef = useRef<HTMLDivElement>(null);
 	const progressRef = useRef<HTMLDivElement>(null);
-	const [, setActiveSection] = useState("hero");
+	const [activeSection, setActiveSection] = useState("hero");
 	usePortfolioNavigation({
 		progressRef,
 		setActiveSection,
@@ -55,7 +55,7 @@ export default function NamPortfolio() {
 				Skip to content
 			</a>
 			<div
-				className="pointer-events-none fixed inset-0 z-[1] bg-[radial-gradient(circle_at_1px_1px,var(--color-ink)_1px,transparent_0)] bg-[length:14px_14px] opacity-[0.03] mix-blend-multiply"
+				className="pointer-events-none fixed inset-0 z-[1] bg-[radial-gradient(circle_at_1px_1px,var(--color-ink)_1px,transparent_0)] bg-[length:14px_14px] opacity-[0.018] mix-blend-multiply"
 				aria-hidden="true"
 			/>
 
@@ -64,6 +64,8 @@ export default function NamPortfolio() {
 				className="fixed left-0 top-0 z-50 h-[3px] w-full origin-left scale-x-0 bg-rebar"
 				aria-hidden="true"
 			/>
+
+			<ChapterNav activeSection={activeSection} />
 
 			<main id="portfolio-main" tabIndex={-1}>
 				<HeroSection />

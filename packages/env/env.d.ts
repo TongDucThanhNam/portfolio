@@ -3,11 +3,11 @@ import { type web as server } from "@tanstack-start-portfolio/infra/alchemy.run"
 export type CloudflareEnv = typeof server.Env;
 
 declare global {
-  type Env = CloudflareEnv;
+	type Env = CloudflareEnv;
 }
 
 declare module "cloudflare:workers" {
-  namespace Cloudflare {
-    export interface Env extends CloudflareEnv {}
-  }
+	namespace Cloudflare {
+		export interface Env extends CloudflareEnv {}
+	}
 }

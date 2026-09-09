@@ -1,5 +1,124 @@
 # UX iteration log
 
+## 2026-07-26 — `/` / navigation and project discoverability
+
+| Route/component | Baseline map | States audited | Findings | Shared pattern | Final map | Visual check | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `/` / `NamPortfolio` | `docs/ux-ui-map/external-audit-baseline-NamPortfolio-20260726T033738Z.txt` | Hero, global chapter state, featured projects, archive disclosures, responsive navigation, reduced motion | Active section was computed but not exposed; project counts were non-actionable; featured rail disappeared below `lg` | Existing mono labels, native disclosures, terracotta active states | `docs/ux-ui-map/final-NamPortfolio-20260726T040500Z.txt` | Blocked: Chrome/Edge headless returned blank compositor output despite preview HTTP `200`; invalid captures removed | verified |
+
+### Audit decision
+
+- Independent audit: `C:\Users\terasumi\Documents\source_code\improve-ux-ui\artifacts\namportfolio-20260726T033738Z`
+- Semantic verdict: `ACCEPT` with bounded implementation. The source-backed navigation and discoverability findings were accepted; full Hero recomposition, mechanical factual deduplication, and invented static-content loading/permission states were excluded.
+- The existing Hero, its uncommitted halftone/collision work, all nine projects, project disclosures, `Why` keyboard tabs, exact data, and current design tokens remain intact.
+
+### Direction delivered
+
+- Exposed the existing active-section observer through a persistent seven-chapter navigator after the intro: a full desktop pill and a compact native disclosure on mobile.
+- Converted `03 featured / 06 archive` from passive metadata into direct in-page navigation.
+- Reworked the featured-project rail into a three-item sticky mobile control while preserving the established vertical desktop rail and active location state.
+- Added scroll offsets for featured and archive anchors so sticky controls do not obscure their destinations.
+
+### Verification
+
+- `npm run check:tailwind-only`, targeted Biome formatting/check, `npm run typecheck --workspace web`, production build, final full-route `ui-map`, and `git diff --check` complete successfully.
+- The production preview returned HTTP `200`. Automated visual capture is explicitly not claimed: installed Windows Chrome/Edge binaries produced blank headless DOM/compositor output in this session.
+
+
+## 2026-07-25 — `/` / halftone visibility and collision correction
+
+| Field | Evidence |
+| --- | --- |
+| Status | Implemented and locally verified; not deployed |
+| Audit baselines | `docs/ux-ui-map/external-audit-baseline-HeroSection-20260725T153736Z.txt`; `docs/ux-ui-map/external-audit-baseline-HumanLoopPanel-20260725T153807Z.txt` |
+| Final maps | `docs/ux-ui-map/final-HeroSection-20260725T160308Z.txt`; `docs/ux-ui-map/final-HumanLoopPanel-20260725T160308Z.txt` |
+| Independent audits | `C:\Users\terasumi\Documents\source_code\improve-ux-ui\artifacts\herosection-20260725T153736Z`; `C:\Users\terasumi\Documents\source_code\improve-ux-ui\artifacts\humanlooppanel-20260725T153807Z` |
+| Semantic verdict | `REJECT`; both tabbed-sheet redesigns contradicted the explicit preservation constraints. Progressive disclosure was retained only as the requested compact mobile override trace. |
+| Viewports | 1440 × 900, 1440 × 760, 1024 × 768, and 390 × 844 |
+
+### Direction delivered
+
+- Restored a visible 3px newsprint screen at `black 58%` /
+  `transparent 61%`, with contrast `1.30` and brightness `0.62`.
+- Moved `NODE // HUMAN` left of the reticle; measured caption-to-silhouette
+  gaps are 59.0px, 48.4px, and 52.0px at the three desktop/tablet widths.
+- Constrained the mobile action flex items and put the complete `IN THE LOOP`
+  wordmark in the foreground with a 20px right inset.
+- Expanded the feedback loop across its 250-unit bounds, aligned all four
+  plus marks to its node rows, and kept `HUMAN DECIDES` inside its right
+  column with terracotta emphasis.
+- Preserved the full desktop instrument panel and exposed only the existing
+  `HUMAN OVERRIDE` / `ON` row on mobile.
+
+### Quantitative and collision evidence
+
+- Test A: torso mean `0.7377`, background mean `0.9181`, difference `0.1804`
+  (`>= 0.12`).
+- Test B: median six-pixel window swing `0.2481` across 15 horizontal shirt
+  runs spanning all three raster phases (`>= 0.15`).
+- The mobile actions end at x=370 in a 390px viewport and their content
+  `scrollWidth` equals `clientWidth`; the override row has 15.1px clearance
+  from the actions and 6.2px clearance from the bottom facts.
+- The schematic clears the actions by 9.0px, 4.6px, and 17.4px and clears the
+  bottom facts by 166.0px, 104.3px, and 92.9px at the visible viewports.
+- The desktop connector ends 10.0px before the panel at both 1440 widths; at
+  1024px the hidden connector leaves 62.9px between the reticle and panel.
+- The mobile loop title deliberately overlaps the portrait in front
+  (`z-index 4` over `3`) and remains wholly inside x=131.3–370.
+- Screenshots are 200,226; 174,155; 152,095; and 87,612 bytes. The preview
+  returned HTTP `200` and referenced built CSS `global-CNxoZ6pL.css`.
+
+### Verification
+
+- `npm run check:tailwind-only`, `npm run typecheck`,
+  `npx biome check apps/web/src/components/nam-portfolio`, production build,
+  final `ui-map`, and `git diff --check` complete successfully.
+
+## 2026-07-25 — `/` / portrait halftone and feedback-loop balance
+
+| Field | Evidence |
+| --- | --- |
+| Status | Implemented and locally verified; not deployed |
+| Accepted audit baseline | `docs/ux-ui-map/external-audit-baseline-HeroSection-20260725T150344Z.txt` |
+| Final maps | `docs/ux-ui-map/final-HeroSection-20260725T152700Z.txt`; `docs/ux-ui-map/final-HumanLoopPanel-20260725T152700Z.txt` |
+| Independent audit | `C:\Users\terasumi\Documents\source_code\improve-ux-ui\artifacts\herosection-20260725T150344Z` |
+| Semantic verdict | `REJECT`; the audit's new proof-card/tab architecture contradicted the user's preservation constraints, while its source-backed left-column spacing diagnosis was retained |
+| Viewports | 1440 × 900, 1440 × 760, 1024 × 768, and 390 × 844 |
+
+### Direction delivered
+
+- Preserved the halftone portrait, head reticle, mounted `NODE // HUMAN`
+  caption, and dashed decision-layer handoff while correcting their density,
+  placement, and responsive visibility.
+- Kept the receiving dot outside the panel border and hid it at the same
+  1024-pixel boundary as the connector so it never becomes an orphaned marker.
+- Moved the desktop action stack from a bottom anchor to a premise-relative top
+  anchor and used the vacated lower-left space for a four-step orthogonal
+  `AI DRAFTS → HUMAN DECIDES → SHIP → REFINE` cycle.
+- Hid the decorative cycle and dense instrument panel below `md`, where the
+  measured 390 × 844 composition had insufficient vertical and horizontal room.
+- Preserved the bottom metadata markup and all pre-existing copy.
+
+### Quantitative and visual evidence
+
+- The final 1440 × 900 torso sample is `0.6345` mean normalized luminance;
+  empty background is `0.9181`; separation is `0.2836`, exceeding the `0.12`
+  threshold.
+- Portrait settings are contrast `1.30`, brightness `0.66`, dot pitch `2px`,
+  and dot stops `black 66%, transparent 69%`.
+- The face remains legible at 1440 × 900: eyes, brows, nose, and mouth are
+  visually distinct without sacrificing torso mass.
+- All four PNGs were captured only after the preview returned HTTP `200` and
+  referenced the built `global-t7VWsu43.css` asset (72,218 bytes).
+- Final visual inspection found no collisions among the premise, actions,
+  feedback cycle, bottom metadata, reticle/caption, connector, and
+  `IN THE LOOP` display type at any requested viewport.
+
+### Verification
+
+- `npm run check:tailwind-only`, `npm run typecheck`, targeted Biome,
+  production build, final `ui-map`, and `git diff --check` complete successfully.
+
 ## 2026-07-25 — `/` / zero-orbit portrait reset
 
 | Field | Evidence |

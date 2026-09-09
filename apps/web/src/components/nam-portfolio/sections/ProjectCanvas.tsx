@@ -39,7 +39,7 @@ function ExtensionCanvas() {
 					E
 				</strong>
 			</div>
-			<div className="grid min-h-[clamp(390px,54vh,590px)] grid-cols-[minmax(0,1fr)_minmax(210px,0.38fr)] max-lg:grid-cols-[minmax(0,1fr)_minmax(190px,0.42fr)] max-md:min-h-[390px] max-md:grid-cols-[minmax(0,1fr)_42%]">
+			<div className="grid min-h-[clamp(340px,45vh,500px)] grid-cols-[minmax(0,1fr)_minmax(210px,0.38fr)] max-lg:grid-cols-[minmax(0,1fr)_minmax(190px,0.42fr)] max-md:min-h-[390px] max-md:grid-cols-[minmax(0,1fr)_42%]">
 				<div className="p-[clamp(34px,5vw,76px)] max-md:px-4 max-md:py-6">
 					<span className={productEyebrowClass}>Browser context</span>
 					<h4 className={cx(productPanelHeadingClass, "max-md:text-[2rem]")}>
@@ -114,7 +114,7 @@ function WorkspaceCanvas() {
 	return (
 		<div className="bg-ink text-paper [&>div:first-child]:border-[rgba(246,242,233,0.14)]">
 			<WindowBar label="Eragear AI Workspace" />
-			<div className="grid min-h-[clamp(430px,58vh,620px)] grid-cols-[110px_minmax(0,1fr)_190px] max-xl:grid-cols-[84px_minmax(0,1fr)] max-md:min-h-[410px] max-md:grid-cols-[52px_minmax(0,1fr)]">
+			<div className="grid min-h-[clamp(360px,47vh,520px)] grid-cols-[110px_minmax(0,1fr)_190px] max-xl:grid-cols-[84px_minmax(0,1fr)] max-md:min-h-[410px] max-md:grid-cols-[52px_minmax(0,1fr)]">
 				<aside className="flex flex-col gap-[18px] border-r border-[rgba(246,242,233,0.14)] px-[14px] py-[22px] font-mono text-[0.5rem] uppercase text-[rgba(246,242,233,0.52)] max-md:gap-4 max-md:px-2.5 max-md:[&>span]:hidden">
 					<strong className="grid h-7 w-7 place-items-center bg-rebar text-paper">
 						E
@@ -179,7 +179,7 @@ function LinkSaverCanvas() {
 	return (
 		<div>
 			<WindowBar label="Link Saver" />
-			<div className="grid min-h-[clamp(390px,54vh,580px)] grid-cols-[170px_minmax(0,1fr)] max-md:min-h-[400px] max-md:grid-cols-1">
+			<div className="grid min-h-[clamp(340px,45vh,500px)] grid-cols-[170px_minmax(0,1fr)] max-md:min-h-[400px] max-md:grid-cols-1">
 				<aside className="flex flex-col gap-[18px] border-r border-line px-[18px] py-[26px] font-mono text-[0.55rem] uppercase text-muted max-md:hidden">
 					<strong className="mb-[14px] text-[0.66rem] font-normal text-ink">
 						Knowledge inbox
@@ -227,14 +227,50 @@ export function ProjectCanvas({
 	active: boolean;
 }) {
 	return (
-		<figure className="relative isolate m-0 border border-line bg-[rgba(246,242,233,0.72)] p-[clamp(18px,2.5vw,34px)] shadow-[0_1px_3px_rgba(22,20,15,0.1),0_28px_70px_rgba(22,20,15,0.11)] max-md:-mx-2 max-md:p-2.5">
+		<figure
+			className="group/canvas relative isolate m-0 p-[clamp(10px,1.4vw,18px)] max-md:-mx-2 max-md:p-2.5"
+			data-spotlight-grid
+		>
 			<div
-				className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(22,20,15,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(22,20,15,0.045)_1px,transparent_1px)] bg-[length:26px_26px] [mask-image:linear-gradient(to_bottom,black,transparent)]"
+				className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(246,242,233,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(246,242,233,0.045)_1px,transparent_1px)] bg-[length:26px_26px] [mask-image:linear-gradient(to_bottom,black,transparent)]"
 				aria-hidden="true"
 			/>
 			<div
+				className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(circle_260px_at_var(--spotlight-x,50%)_var(--spotlight-y,50%),rgba(184,66,46,0.14),transparent_72%)] opacity-0 transition-opacity duration-500 group-hover/canvas:opacity-100"
+				aria-hidden="true"
+			/>
+			<div
+				className="pointer-events-none absolute -inset-px z-[3]"
+				aria-hidden="true"
+			>
+				<span
+					className={cx(
+						"absolute top-0 left-0 h-px w-full origin-left bg-rebar transition-transform duration-500 ease-fluid",
+						active ? "scale-x-100" : "scale-x-0",
+					)}
+				/>
+				<span
+					className={cx(
+						"absolute top-0 right-0 h-full w-px origin-top bg-rebar transition-transform delay-100 duration-500 ease-fluid",
+						active ? "scale-y-100" : "scale-y-0",
+					)}
+				/>
+				<span
+					className={cx(
+						"absolute right-0 bottom-0 h-px w-full origin-right bg-rebar transition-transform delay-200 duration-500 ease-fluid",
+						active ? "scale-x-100" : "scale-x-0",
+					)}
+				/>
+				<span
+					className={cx(
+						"absolute bottom-0 left-0 h-full w-px origin-bottom bg-rebar transition-transform delay-300 duration-500 ease-fluid",
+						active ? "scale-y-100" : "scale-y-0",
+					)}
+				/>
+			</div>
+			<div
 				className={cx(
-					"overflow-hidden rounded-md border border-[rgba(22,20,15,0.2)] bg-paper shadow-[0_1px_3px_rgba(22,20,15,0.12),0_14px_38px_rgba(22,20,15,0.12)]",
+					"overflow-hidden border border-[rgba(246,242,233,0.2)] bg-paper shadow-[0_22px_70px_rgba(0,0,0,0.28)]",
 					active && "motion-safe:animate-product-surface",
 				)}
 			>
@@ -246,7 +282,7 @@ export function ProjectCanvas({
 					<WorkspaceCanvas />
 				)}
 			</div>
-			<figcaption className="mt-4 flex justify-between gap-5 font-mono text-[0.54rem] uppercase tracking-[0.08em] text-muted max-md:text-[0.45rem]">
+			<figcaption className="mt-4 flex justify-between gap-5 font-mono text-[0.54rem] uppercase tracking-[0.08em] text-paper/45 max-md:text-[0.45rem]">
 				<span className="text-rebar">{project.cursor}</span>
 				<span>{project.status}</span>
 			</figcaption>

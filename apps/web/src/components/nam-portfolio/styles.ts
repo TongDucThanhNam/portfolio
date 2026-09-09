@@ -1,7 +1,7 @@
 export const sectionPadClass = "relative px-pad-x py-pad-y";
 
 export const sectionHeadClass =
-	"mb-[clamp(42px,7vw,72px)] flex items-end justify-between gap-6 border-b border-line pb-4 max-sm:items-start";
+	"group relative mb-[clamp(42px,7vw,72px)] flex items-end justify-between gap-6 border-b border-line pb-4 max-sm:items-start";
 
 export const sectionTagClass =
 	"font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted";
@@ -24,6 +24,9 @@ export const buttonPrimaryClass =
 
 export const buttonGhostClass =
 	"text-ink hover:-translate-y-0.5 hover:border-rebar hover:bg-rebar hover:text-paper";
+
+export const magneticTargetClass =
+	"will-change-transform [transform:translate3d(var(--magnetic-x,0px),var(--magnetic-y,0px),0)]";
 
 export const chipClass =
 	"inline-flex rounded-pill border border-line px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-[0.08em] text-ink";
