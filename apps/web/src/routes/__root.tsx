@@ -82,7 +82,7 @@ function RootDocument({ children }: { children: ReactNode }) {
 	return (
 		<html
 			lang="en"
-			className="scroll-smooth bg-bone text-ink [scrollbar-color:var(--color-rebar)_var(--color-bone)]"
+			className="scroll-smooth bg-bone text-ink [scrollbar-color:var(--color-rebar)_var(--color-bone)] motion-reduce:scroll-auto"
 		>
 			<head>
 				<HeadContent />

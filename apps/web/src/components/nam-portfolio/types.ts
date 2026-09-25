@@ -53,4 +53,8 @@ export type Project = {
 	cursor: string;
 	visual: ProjectVisual;
 	featured: boolean;
+	preview?: {
+		src: string;
+		alt: string;
+	};
 };

@@ -5,7 +5,7 @@ const capabilities = [
 	"Browser extensions",
 	"Automation",
 	"Full-stack TypeScript",
-	"Verifiable output",
+	"Product thinking",
 ];
 
 function RibbonSet({ hidden = false }: { hidden?: boolean }) {
@@ -126,7 +126,7 @@ export function CapabilityRibbon() {
 
 	return (
 		<section
-			className="relative z-[2] overflow-hidden border-y border-[rgba(246,242,233,0.14)] bg-ink text-paper"
+			className="relative z-[2] overflow-hidden border-y border-line bg-bone text-ink-soft"
 			aria-label="Core capabilities"
 		>
 			<div

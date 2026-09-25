@@ -1,15 +1,16 @@
 export const sectionPadClass = "relative px-pad-x py-pad-y";
 
 export const sectionHeadClass =
-	"group relative mb-[clamp(42px,7vw,72px)] flex items-end justify-between gap-6 border-b border-line pb-4 max-sm:items-start";
+	"group relative mb-[clamp(42px,5vw,72px)] flex items-start justify-between gap-6 border-t border-ink/30 pt-4";
 
 export const sectionTagClass =
-	"font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted";
+	"font-mono text-[0.65rem] uppercase tracking-[0.12em] text-ink-soft";
 
 export const sectionTagRightClass =
 	"max-sm:max-w-[46%] max-sm:text-[0.58rem] text-right";
 
-export const sectionTagNumberClass = "mr-2 text-rebar";
+export const sectionTagNumberClass =
+	"mr-4 text-rebar after:ml-2 after:content-['/']";
 
 export const labelAccentClass =
 	"inline-flex items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-rebar";

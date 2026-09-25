@@ -343,7 +343,7 @@ export function HeroSection() {
 				<span className="pointer-events-none absolute inset-0 z-2 overflow-hidden [mask-image:linear-gradient(to_bottom,#000_0_88%,transparent_100%)]">
 					<span className="absolute inset-0 [clip-path:inset(0)] transition-[clip-path] duration-[1700ms] ease-[cubic-bezier(0.45,0,0.2,1)] will-change-[clip-path] group-hover:[clip-path:inset(100%_0_0_0)] motion-reduce:[clip-path:inset(0)] motion-reduce:transition-opacity motion-reduce:duration-200 motion-reduce:group-hover:opacity-0 motion-reduce:group-hover:[clip-path:inset(0)]">
 						<img
-							className="absolute -top-[3%] left-1/2 h-auto w-[136%] max-w-none -translate-x-1/2 mix-blend-multiply opacity-90 transition-transform duration-[1800ms] ease-[cubic-bezier(0.45,0,0.2,1)] group-hover:scale-[1.015] max-md:w-[146%]"
+							className="absolute -top-[3%] left-1/2 h-auto w-[136%] max-w-none -translate-x-1/2 mix-blend-multiply opacity-90 max-md:w-[146%]"
 							src="/images/avatar-ascii.svg"
 							alt="Tong Duc Thanh Nam"
 							width="720"
@@ -355,7 +355,7 @@ export function HeroSection() {
 					</span>
 					<span className="absolute inset-0 [clip-path:inset(0_0_100%_0)] transition-[clip-path] duration-[1700ms] ease-[cubic-bezier(0.45,0,0.2,1)] will-change-[clip-path] group-hover:[clip-path:inset(0)] motion-reduce:opacity-0 motion-reduce:[clip-path:inset(0)] motion-reduce:transition-opacity motion-reduce:duration-200 motion-reduce:group-hover:opacity-100">
 						<img
-							className="absolute -top-[3%] left-1/2 h-auto w-[136%] max-w-none -translate-x-1/2 transition-transform duration-[1800ms] ease-[cubic-bezier(0.45,0,0.2,1)] group-hover:scale-[1.015] max-md:w-[146%]"
+							className="absolute -top-[3%] left-1/2 h-auto w-[136%] max-w-none -translate-x-1/2 max-md:w-[146%]"
 							src="/images/avatar-cutout.webp"
 							alt=""
 							width="1024"

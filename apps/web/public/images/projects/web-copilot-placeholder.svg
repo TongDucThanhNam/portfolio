@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs><pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#465249" stroke-opacity=".065"/></pattern></defs>
+  <path fill="#c6ccc5" d="M0 0h1600v1000H0z"/>
+  <path fill="url(#grid)" d="M0 0h1600v1000H0z"/>
+  <g fill="none" stroke="#465249" stroke-opacity=".28"><path d="M768 468h64v64h-64zM800 448v104M748 500h104"/><path d="M48 72V48h24m1456 0h24v24M48 928v24h24m1456 0h24v-24"/></g>
+  <g fill="#465249" font-family="monospace" font-size="15" letter-spacing="3" text-anchor="middle"><text x="800" y="581">WEBSITE PREVIEW</text><text x="800" y="614" font-size="11" opacity=".65">IMAGE PLACEHOLDER / 01</text></g>
+</svg>

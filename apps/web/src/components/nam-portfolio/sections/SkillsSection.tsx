@@ -1,95 +1,98 @@
 import { SectionHead } from "../common";
 import { skills } from "../data";
-import { sectionPadClass } from "../styles";
-import { cx } from "../utils";
-import { VariableWeightText } from "../visuals/VariableWeightText";
+
+const evidence: Record<string, { name: string; href: string }> = {
+	Languages: { name: "the project archive", href: "#project-archive" },
+	"AI applications": {
+		name: "Eragear AI Workspace",
+		href: "#project-ai-workspace",
+	},
+	Frontend: { name: "Eragear AI Workspace", href: "#project-ai-workspace" },
+	Backend: { name: "Link Saver", href: "#project-link-saver" },
+	"Browser extensions": {
+		name: "Eragear Web Copilot",
+		href: "#project-web-copilot",
+	},
+	"Data / infrastructure": { name: "Link Saver", href: "#project-link-saver" },
+	Automation: {
+		name: "Private Operations Discord Bot",
+		href: "#archive-automation",
+	},
+	Mobile: { name: "Seller Keyboard", href: "#archive-mobile" },
+};
 
 export function SkillsSection() {
 	return (
 		<section
 			id="skills"
-			className={cx(
-				sectionPadClass,
-				"relative overflow-hidden bg-paper text-ink",
-			)}
+			className="relative scroll-mt-12 bg-bone px-pad-x py-[clamp(72px,9vw,136px)]"
 		>
-			<span
-				className="pointer-events-none absolute -right-[0.04em] top-[0.05em] font-serif text-[clamp(15rem,35vw,38rem)] leading-none tracking-[-0.1em] text-bone"
-				aria-hidden="true"
-			>
-				05
-			</span>
-			<SectionHead num="05" title="Skills" detail="Capability matrix / 08" />
-
-			<div className="relative z-10 mb-[clamp(58px,9vw,118px)] grid items-end gap-10 lg:grid-cols-[1.2fr_0.45fr]">
-				<p
-					className="max-w-[8.7em] font-serif text-[clamp(3.5rem,8.4vw,8.6rem)] leading-[0.84] tracking-[-0.06em]"
-					data-reveal="rise"
-				>
-					A working
-					<br />
-					<span className="text-rebar">capability field.</span>
-				</p>
-				<div
-					className="max-w-[390px] border-t border-ink pt-6 lg:justify-self-end"
-					data-reveal="rise"
-				>
-					<p className="text-[0.95rem] leading-7 text-ink-soft">
-						Eight capability zones. Each maps to a product surface, a system
-						responsibility, or a shipped workflow—not a decorative logo wall.
+			<SectionHead
+				num="05"
+				title="Capabilities"
+				detail="The tools follow the problem"
+			/>
+			<div className="grid items-start gap-12 lg:grid-cols-[0.45fr_1fr] lg:gap-[clamp(48px,8vw,120px)]">
+				<div className="lg:sticky lg:top-28" data-reveal="rise">
+					<h2 className="font-['Archivo_Variable'] text-[clamp(3.2rem,5.8vw,6.2rem)] font-medium leading-[0.94] tracking-[-0.065em]">
+						Many tools.
+						<br />
+						<span className="font-serif font-normal italic text-rebar">
+							One mindset.
+						</span>
+					</h2>
+					<p className="mt-7 max-w-[30ch] text-[0.9rem] leading-7 text-ink-soft">
+						Choose what serves the product. Connect it carefully. Make it work
+						for the person using it.
 					</p>
-					<p className="mt-6 font-mono text-[0.58rem] uppercase tracking-[0.12em] text-rebar">
-						Move through the field
+					<p className="mt-10 hidden font-mono text-[0.58rem] uppercase tracking-[0.12em] text-ink-soft lg:block">
+						Explore the toolkit ↘
 					</p>
 				</div>
-			</div>
-
-			<div
-				className="group/field relative border-t border-l border-line"
-				data-spotlight-grid
-			>
-				<div
-					className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_420px_at_var(--spotlight-x,50%)_var(--spotlight-y,50%),rgba(184,66,46,0.105),transparent_72%)] opacity-0 transition-opacity duration-500 group-hover/field:opacity-100"
-					aria-hidden="true"
-				/>
-				<div className="relative grid lg:grid-cols-2">
+				<div className="border-t border-ink/30">
 					{skills.map((group) => (
-						<article
+						<details
 							key={group.label}
-							className="group/cell relative isolate min-h-[300px] overflow-hidden border-r border-b border-line px-[clamp(22px,3.4vw,54px)] py-[clamp(28px,4vw,58px)] transition-colors duration-500 hover:bg-bone/65"
-							data-reveal="rise"
+							className="group/skill border-b border-ink/20"
+							open={group.num === "02"}
 						>
-							<span
-								className="pointer-events-none absolute -right-[0.03em] -bottom-[0.32em] -z-10 font-serif text-[clamp(10rem,18vw,19rem)] leading-none tracking-[-0.09em] text-bone transition-[color,transform] duration-700 group-hover/cell:-translate-x-3 group-hover/cell:text-[rgba(184,66,46,0.09)]"
-								aria-hidden="true"
-							>
-								{group.num}
-							</span>
-							<header className="flex items-start justify-between gap-8">
-								<span className="font-mono text-[0.58rem] uppercase tracking-[0.13em] text-rebar">
-									Field / {group.num}
+							<summary className="grid min-h-[94px] cursor-pointer list-none grid-cols-[24px_1fr_24px] items-center gap-4 py-6 transition-colors hover:text-rebar sm:gap-6 [&::-webkit-details-marker]:hidden">
+								<span className="font-mono text-[0.55rem] text-rebar">
+									{group.num}
 								</span>
-								<span className="h-px w-10 origin-right bg-line transition-all duration-500 group-hover/cell:w-20 group-hover/cell:bg-rebar" />
-							</header>
-
-							<h3 className="mt-12 font-['Archivo_Variable'] text-[clamp(2.5rem,4.2vw,5rem)] leading-[0.88] tracking-[-0.06em] transition-colors duration-500 group-hover/cell:text-rebar">
-								<VariableWeightText text={group.label} />
-							</h3>
-							<p className="mt-6 max-w-[38em] text-[0.88rem] leading-7 text-ink-soft">
-								{group.description}
-							</p>
-							<ul className="mt-9 flex list-none flex-wrap gap-x-4 gap-y-2 border-t border-line pt-5 font-mono text-[0.54rem] uppercase tracking-[0.09em] text-muted">
-								{group.items.map((item) => (
-									<li
-										key={item}
-										className="flex items-center gap-2 transition-colors duration-300 group-hover/cell:text-ink-soft"
-									>
-										<span className="h-1 w-1 bg-rebar" aria-hidden="true" />
-										{item}
-									</li>
-								))}
-							</ul>
-						</article>
+								<h3 className="font-['Archivo_Variable'] text-[clamp(1.5rem,2.4vw,2.6rem)] font-normal leading-tight tracking-[-0.04em] transition-transform duration-500 ease-fluid group-hover/skill:translate-x-2">
+									{group.label}
+								</h3>
+								<span
+									className="text-xl transition-transform duration-300 group-open/skill:rotate-45"
+									aria-hidden="true"
+								>
+									+
+								</span>
+							</summary>
+							<div className="pb-8 pl-10 sm:pl-12">
+								<p className="max-w-[48ch] text-[0.87rem] leading-7 text-ink-soft">
+									{group.description}
+								</p>
+								<ul className="mt-5 flex flex-wrap gap-x-5 gap-y-3">
+									{group.items.map((item) => (
+										<li
+											key={item}
+											className="border-b border-ink/20 pb-1 font-mono text-[0.62rem] leading-5 text-ink"
+										>
+											{item}
+										</li>
+									))}
+								</ul>
+								<a
+									href={evidence[group.label].href}
+									className="mt-5 inline-flex min-h-11 items-center gap-4 font-mono text-[0.57rem] uppercase tracking-[0.08em] text-rebar underline-offset-4 hover:underline"
+								>
+									See it in {evidence[group.label].name}
+									<span aria-hidden="true">↗</span>
+								</a>
+							</div>
+						</details>
 					))}
 				</div>
 			</div>

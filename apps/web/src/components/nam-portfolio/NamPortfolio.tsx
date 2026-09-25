@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 
 import { usePortfolioMotionDirector, usePortfolioNavigation } from "./hooks";
+import { useEditorialMotion } from "./hooks/useEditorialMotion";
 import { ChapterNav, Footer } from "./layout";
 import { AboutSection } from "./sections/AboutSection";
 import { CapabilityRibbon } from "./sections/CapabilityRibbon";
@@ -20,6 +21,7 @@ export default function NamPortfolio() {
 		setActiveSection,
 	});
 	usePortfolioMotionDirector(shellRef);
+	useEditorialMotion(shellRef);
 
 	return (
 		<div

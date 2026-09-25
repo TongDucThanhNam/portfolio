@@ -1,211 +1,120 @@
-import { useEffect, useRef } from "react";
-
-import {
-	labelAccentClass,
-	labelRuleClass,
-	magneticTargetClass,
-	sectionPadClass,
-} from "../styles";
-import { cx } from "../utils";
-import { DirectionalHoverText } from "../visuals/DirectionalHoverText";
-import { ScrollWordReveal } from "../visuals/ScrollWordReveal";
-import { ContactBlock } from "./ContactBlock";
+const closingLetters = Array.from("Let's talk.", (letter, index) => ({
+	id: `closing-${index}`,
+	letter,
+}));
 
 export function ContactSection() {
-	const sectionRef = useRef<HTMLElement>(null);
-	const progressRef = useRef<HTMLSpanElement>(null);
-	const progressLabelRef = useRef<HTMLElement>(null);
-
-	useEffect(() => {
-		const section = sectionRef.current;
-		const progressBar = progressRef.current;
-		const progressLabel = progressLabelRef.current;
-
-		if (!section || !progressBar || !progressLabel) return;
-
-		const reducedMotion = window.matchMedia(
-			"(prefers-reduced-motion: reduce)",
-		).matches;
-
-		if (reducedMotion) {
-			section.dataset.closingState = "open";
-			progressBar.style.transform = "scaleX(1)";
-			progressLabel.textContent = "100%";
-			return;
-		}
-
-		let frame = 0;
-		let visible = false;
-
-		const update = () => {
-			frame = 0;
-			if (!visible) return;
-
-			const bounds = section.getBoundingClientRect();
-			const revealRange = window.innerHeight * 0.72;
-			const progress = Math.max(
-				0,
-				Math.min(1, (window.innerHeight - bounds.top) / revealRange),
-			);
-
-			progressBar.style.transform = `scaleX(${progress})`;
-			progressLabel.textContent = `${String(Math.round(progress * 100)).padStart(3, "0")}%`;
-			section.dataset.closingState = progress >= 0.58 ? "open" : "pending";
-		};
-
-		const scheduleUpdate = () => {
-			if (!frame) frame = window.requestAnimationFrame(update);
-		};
-
-		const visibilityObserver = new IntersectionObserver(([entry]) => {
-			visible = entry.isIntersecting;
-			if (visible) scheduleUpdate();
-		});
-
-		section.dataset.closingState = "pending";
-		visibilityObserver.observe(section);
-		window.addEventListener("scroll", scheduleUpdate, { passive: true });
-		window.addEventListener("resize", scheduleUpdate);
-
-		return () => {
-			visibilityObserver.disconnect();
-			window.removeEventListener("scroll", scheduleUpdate);
-			window.removeEventListener("resize", scheduleUpdate);
-			if (frame) window.cancelAnimationFrame(frame);
-			delete section.dataset.closingState;
-			progressBar.style.removeProperty("transform");
-		};
-	}, []);
-
 	return (
 		<section
-			ref={sectionRef}
 			id="contact"
-			className="relative overflow-hidden bg-ink text-paper"
+			className="relative scroll-mt-12 overflow-hidden bg-rebar px-pad-x pb-[clamp(56px,7vw,100px)] pt-[clamp(64px,8vw,120px)] text-paper"
 		>
-			<div
-				className="sticky top-0 z-20 h-1 overflow-hidden bg-[rgba(246,242,233,0.12)]"
-				aria-hidden="true"
+			<header
+				className="flex flex-wrap items-center justify-between gap-4 border-t border-paper/40 pt-4 font-mono text-[0.65rem] uppercase tracking-[0.12em]"
+				data-reveal="line"
 			>
-				<span
-					ref={progressRef}
-					className="block h-full w-full origin-left scale-x-0 bg-rebar will-change-transform"
-				/>
-			</div>
-
-			<div className="pointer-events-none absolute inset-0">
-				<div
-					className="absolute inset-0 bg-[linear-gradient(rgba(246,242,233,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(246,242,233,0.035)_1px,transparent_1px)] bg-size-[48px_48px] opacity-30"
-					aria-hidden="true"
-				/>
-				<div className="absolute -right-[0.04em] -bottom-[0.2em] font-serif text-[clamp(10rem,27vw,29rem)] leading-none tracking-[-0.08em] text-[rgba(246,242,233,0.045)]">
-					06
-				</div>
-			</div>
-
-			<div
-				className={cx(
-					sectionPadClass,
-					"z-10 translate-y-0 opacity-100 transition-[opacity,transform] duration-1000 ease-fluid [[data-closing-state=pending]_&]:translate-y-14 [[data-closing-state=pending]_&]:opacity-35 motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none",
-				)}
-			>
-				<div className="flex flex-wrap items-center justify-between gap-4">
-					<p className={cx(labelAccentClass, "!text-paper")} data-reveal="rise">
-						<span className={labelRuleClass} />
-						Let's talk
-					</p>
-					<p
-						className="flex items-center gap-2 font-mono text-[0.56rem] uppercase tracking-[0.12em] text-[rgba(246,242,233,0.55)]"
-						data-reveal="rise"
-						aria-hidden="true"
-					>
-						<span className="h-px w-8 bg-rebar" />
-						Closing signal /{" "}
-						<strong ref={progressLabelRef} className="font-normal text-rebar">
-							000%
-						</strong>
-					</p>
-				</div>
-				<ScrollWordReveal
-					as="h2"
-					className="mt-8 max-w-[11em] font-serif text-[clamp(3.8rem,10vw,10rem)] leading-[0.9] tracking-[-0.04em]"
-					segments={[
-						{ text: "Have a workflow worth turning into a" },
-						{ text: "product?", accent: true },
-					]}
-				/>
-
-				<a
-					href="mailto:tongducthanhnam@gmail.com"
-					className="group mt-[clamp(48px,8vw,112px)] grid gap-6 border-y border-[rgba(246,242,233,0.18)] py-8 transition-colors hover:border-rebar md:grid-cols-[0.42fr_1fr_auto] md:items-center"
-					data-reveal="rise"
-				>
-					<DirectionalHoverText
-						text="Start a conversation"
-						className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-rebar"
-					/>
-					<span className="min-w-0 break-all font-serif text-[clamp(1.45rem,3.2vw,3.8rem)] leading-none tracking-[-0.035em] transition-transform duration-500 group-hover:translate-x-2">
-						tongducthanhnam@gmail.com
-					</span>
+				<p>
+					<span className="mr-4 text-paper/65">06 /</span>What's next?
+				</p>
+				<p className="inline-flex items-center gap-2 text-paper/80">
 					<span
-						className={cx(
-							magneticTargetClass,
-							"grid h-14 w-14 place-items-center rounded-full border border-[rgba(246,242,233,0.24)] font-serif text-2xl transition duration-500 group-hover:border-rebar group-hover:bg-rebar group-hover:text-ink md:h-20 md:w-20",
-						)}
+						className="h-1.5 w-1.5 rounded-full bg-paper"
 						aria-hidden="true"
-						data-magnetic
-					>
-						↗
-					</span>
-				</a>
-
-				<div
-					className="mt-12 grid gap-x-12 border-b border-[rgba(246,242,233,0.18)] pb-2 lg:grid-cols-2"
+					/>
+					Available for thoughtful work
+				</p>
+			</header>
+			<div className="mt-[clamp(48px,7vw,104px)] grid gap-8 md:grid-cols-[1fr_0.6fr] md:items-end">
+				<h2
+					className="max-w-[15ch] font-serif text-[clamp(2.4rem,4.8vw,5.1rem)] font-normal leading-[1.02] tracking-[-0.04em]"
 					data-reveal="rise"
 				>
-					<ContactBlock label="Phone">
-						<a href="tel:+84869887363" className="transition hover:text-rebar">
-							+84 869 887 363
-						</a>
-					</ContactBlock>
-					<ContactBlock label="Based">
+					Good people.
+					<br />
+					Interesting problems.
+				</h2>
+				<p
+					className="max-w-[34ch] text-[0.9rem] leading-7 text-paper/80 md:justify-self-end"
+					data-reveal="rise"
+				>
+					Building a team or a product?
+					<br />
+					I'd love to hear what you have in mind.
+				</p>
+			</div>
+			<a
+				href="mailto:tongducthanhnam@gmail.com"
+				aria-label="Let's talk. Email Tong Duc Thanh Nam"
+				className="group mt-8 flex items-center justify-between gap-4 border-b border-paper/50 pb-5 md:mt-10 md:pb-8"
+			>
+				<span className="sr-only">Let's talk. Email Tong Duc Thanh Nam</span>
+				<span
+					className="block overflow-hidden pb-[0.12em] font-['Archivo_Variable'] text-[clamp(4.3rem,15.5vw,17rem)] font-medium leading-[1.03] tracking-[-0.075em]"
+					data-closing-title
+					aria-hidden="true"
+				>
+					{closingLetters.map(({ letter, id }) => (
+						<span
+							key={id}
+							className="inline-block whitespace-pre"
+							data-closing-letter
+						>
+							{letter}
+						</span>
+					))}
+				</span>
+				<svg
+					viewBox="0 0 100 100"
+					fill="none"
+					className="h-[clamp(42px,9vw,130px)] w-[clamp(42px,9vw,130px)] shrink-0 transition-transform duration-700 ease-fluid group-hover:-translate-y-3 group-hover:translate-x-2 group-focus-visible:-translate-y-3 group-focus-visible:translate-x-2"
+					aria-hidden="true"
+				>
+					<path
+						d="M16 84 84 16M16 16h68v68"
+						stroke="currentColor"
+						strokeWidth="5"
+					/>
+				</svg>
+			</a>
+			<div className="mt-8 grid gap-8 md:grid-cols-[1fr_auto] md:items-start">
+				<div>
+					<a
+						href="mailto:tongducthanhnam@gmail.com"
+						className="inline-flex min-h-11 items-center break-all text-[clamp(1rem,1.8vw,1.6rem)] tracking-[-0.025em] underline-offset-8 hover:underline"
+					>
+						tongducthanhnam@gmail.com
+					</a>
+					<p className="mt-3 font-mono text-[0.56rem] uppercase leading-6 tracking-[0.1em] text-paper/75">
 						Ho Chi Minh City, Vietnam / UTC +7
-					</ContactBlock>
-					<ContactBlock label="Elsewhere">
-						<a
-							href="https://github.com/TongDucThanhNam"
-							target="_blank"
-							rel="noreferrer"
-							className="transition hover:text-rebar"
-						>
-							GitHub ↗
-						</a>
-						{" / "}
-						<a
-							href="https://tongducthanhnam.id.vn"
-							target="_blank"
-							rel="noreferrer"
-							className="transition hover:text-rebar"
-						>
-							Portfolio ↗
-						</a>
-					</ContactBlock>
-					<ContactBlock label="Full profile">
-						<a
-							href="/Tong_Duc_Thanh_Nam_CV_EN.pdf"
-							target="_blank"
-							rel="noreferrer"
-							className="border-b border-rebar transition hover:text-rebar"
-						>
-							Open CV ↗
-						</a>
-					</ContactBlock>
+					</p>
 				</div>
-
-				<div className="mt-8 flex flex-wrap items-center justify-between gap-4 font-mono text-[0.6rem] uppercase tracking-[0.14em] text-[rgba(246,242,233,0.5)]">
-					<span>AI products / extensions / automation / full-stack</span>
-					<span>Available for thoughtful work</span>
-				</div>
+				<nav
+					aria-label="Contact links"
+					className="flex flex-wrap gap-x-8 gap-y-3 font-mono text-[0.63rem] uppercase tracking-[0.1em]"
+				>
+					<a
+						href="https://github.com/TongDucThanhNam"
+						target="_blank"
+						rel="noreferrer"
+						className="inline-flex min-h-11 items-center gap-3 border-b border-paper/40 transition-colors hover:border-paper"
+					>
+						GitHub <span aria-hidden="true">↗</span>
+					</a>
+					<a
+						href="/Tong_Duc_Thanh_Nam_CV_EN.pdf"
+						target="_blank"
+						rel="noreferrer"
+						className="inline-flex min-h-11 items-center gap-3 border-b border-paper/40 transition-colors hover:border-paper"
+					>
+						Résumé <span aria-hidden="true">↗</span>
+					</a>
+					<a
+						href="tel:+84869887363"
+						className="inline-flex min-h-11 items-center gap-3 border-b border-paper/40 transition-colors hover:border-paper"
+					>
+						Call me <span aria-hidden="true">↗</span>
+					</a>
+				</nav>
 			</div>
 		</section>
 	);

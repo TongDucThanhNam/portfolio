@@ -129,6 +129,10 @@ export const skills: SkillGroup[] = [
 export const projects: Project[] = [
 	{
 		name: "Eragear Web Copilot",
+		preview: {
+			src: "/images/projects/web-copilot-placeholder.svg",
+			alt: "Website screenshot placeholder for Eragear Web Copilot",
+		},
 		status: "PUBLISHED · CHROME + FIREFOX",
 		statusTone: "published",
 		proof:
@@ -148,6 +152,10 @@ export const projects: Project[] = [
 	},
 	{
 		name: "Eragear AI Workspace",
+		preview: {
+			src: "/images/projects/ai-workspace-placeholder.svg",
+			alt: "Website screenshot placeholder for Eragear AI Workspace",
+		},
 		status: "LIVE PRODUCT",
 		statusTone: "live",
 		proof:
@@ -174,6 +182,10 @@ export const projects: Project[] = [
 	},
 	{
 		name: "Link Saver",
+		preview: {
+			src: "/images/projects/link-saver-placeholder.svg",
+			alt: "Website screenshot placeholder for Link Saver",
+		},
 		status: "LIVE DEMO",
 		statusTone: "live",
 		proof:
