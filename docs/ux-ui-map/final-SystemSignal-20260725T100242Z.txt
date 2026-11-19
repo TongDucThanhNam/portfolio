@@ -1,8 +1,0 @@
-[SystemSignal] apps/web/src/components/nam-portfolio/visuals/SystemSignal.tsx (full route surface)
-  [source] apps/web/src/components/nam-portfolio/visuals/SystemSignal.tsx
-    [component inventory]
-      [SystemSignal] apps/web/src/components/nam-portfolio/visuals/SystemSignal.tsx:1
-    [semantic hierarchy]
-    [visible copy and content literals]
-      "The Human-in-the-Loop System Path" @ apps/web/src/components/nam-portfolio/visuals/SystemSignal.tsx:10
-      "Editorial coordinate marks framing the human-in-the-loop hero." @ apps/web/src/components/nam-portfolio/visuals/SystemSignal.tsx:11

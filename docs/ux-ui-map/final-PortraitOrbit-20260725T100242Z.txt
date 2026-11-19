@@ -1,7 +1,0 @@
-[PortraitOrbit] apps/web/src/components/nam-portfolio/visuals/PortraitOrbit.tsx (full route surface)
-  [source] apps/web/src/components/nam-portfolio/visuals/PortraitOrbit.tsx
-    [component inventory]
-      [PortraitOrbit] apps/web/src/components/nam-portfolio/visuals/PortraitOrbit.tsx:1
-    [semantic hierarchy]
-    [visible copy and content literals]
-      "HUMAN FIRST · MACHINE FAST · HUMAN FIRST · MACHINE FAST ·" @ apps/web/src/components/nam-portfolio/visuals/PortraitOrbit.tsx:85

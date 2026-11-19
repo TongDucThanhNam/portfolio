@@ -7,9 +7,6 @@
 			"inputs": ["$TURBO_DEFAULT$", ".env*"],
 			"outputs": ["dist/**", ".output/**"]
 		},
-		"lint": {
-			"dependsOn": ["^lint"]
-		},
 		"typecheck": {
 			"dependsOn": ["^typecheck"]
 		},

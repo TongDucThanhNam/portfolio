@@ -4,7 +4,7 @@ import {
 	Outlet,
 	Scripts,
 } from "@tanstack/react-router";
-import { type ReactNode, useEffect } from "react";
+import type { ReactNode } from "react";
 
 import AppShell from "@/components/AppShell";
 import appCss from "@/styles/global.css?url";
@@ -54,23 +54,6 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
-	useEffect(() => {
-		if (!import.meta.env.DEV) return;
-
-		let timer: number | undefined;
-		const loadDevToolbar = () => {
-			timer = window.setTimeout(() => void import("react-grab"), 2400);
-		};
-
-		if (document.readyState === "complete") loadDevToolbar();
-		else window.addEventListener("load", loadDevToolbar, { once: true });
-
-		return () => {
-			window.removeEventListener("load", loadDevToolbar);
-			if (timer !== undefined) window.clearTimeout(timer);
-		};
-	}, []);
-
 	return (
 		<AppShell>
 			<Outlet />

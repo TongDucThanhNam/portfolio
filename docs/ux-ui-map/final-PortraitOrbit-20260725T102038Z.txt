@@ -1,4 +1,0 @@
-[removed] Component PortraitOrbit was not found below apps/web/src.
-
-The final HeroSection map contains no PortraitOrbit source, import, mount,
-visible copy, connector, node, plate, or portrait annotation branch.
